@@ -5,7 +5,7 @@ import yaml
 import time
 import subprocess
 
-with open("/app/CORE/config_create_sheets.yaml", "r") as cr:
+with open("/app/config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
 Source1 = config_vals['api_daily_data_Source1']
 Source2 = config_vals['api_daily_data_Source2']
