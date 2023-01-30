@@ -75,16 +75,16 @@ while check_date == c:
 
     repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
 
-    file_path = 'Source1/'+(a)+'.csv'
+    file_path = 'DATA/Source1/'+(a)+'.csv'
     with open(file_path, 'r') as file:
         content = file.read()
-    repo.create_file(file_path, "Save: Source1/"+str(a)+".csv",
+    repo.create_file(file_path, "Save: DATA/Source1/"+str(a)+".csv",
                      content)
 
-    file_path = 'Source2/'+(a)+'.csv'
+    file_path = 'DATA/Source2/'+(a)+'.csv'
     with open(file_path, 'r') as file:
         content = file.read()
-    repo.create_file(file_path, "Save: Source2/"+str(a)+".csv",
+    repo.create_file(file_path, "Save: DATA/Source2/"+str(a)+".csv",
                      content)
     time.sleep(15)
 
