@@ -4,7 +4,7 @@ from github import Github
 from datetime import timedelta
 import yaml
 
-SERVICE_ACCOUNT_FILE = 'sars-cov-2-poland.json'
+SERVICE_ACCOUNT_FILE = '/app/CORE/sars-cov-2-poland.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE,
@@ -13,14 +13,16 @@ service = build('sheets', 'v4', credentials=creds)
 sheet = service.spreadsheets()
 
 config_vals = ""
-with open("config_create_sheets.yaml", "r") as cr:
+with open("/app/config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
 datetime = config_vals['datetime']
 s = config_vals['g']
 g = Github(s)
 
 config_vals = ""
-with open("config_for_update_avr7d_array_range_7d_py.yaml", "r") as cr:
+with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py"
+          ".yaml",
+          "r") as cr:
    config_vals = yaml.full_load(cr)
 formula1 = config_vals['formula1']
 formula2 = config_vals['formula2']
@@ -262,24 +264,30 @@ request10 = service.spreadsheets().batchUpdate(
 print(request10)
 
 config_vals['a'] = a + 7
-with open("config_for_update_avr7d_array_range_7d_py.yaml", "w") as cw:
+with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
+          "ml", "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
    
 config_vals['b'] = b + 7
-with open("config_for_update_avr7d_array_range_7d_py.yaml", "w") as cw:
+with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
+          "ml", "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
    
 config_vals['c'] = c + 7
-with open("config_for_update_avr7d_array_range_7d_py.yaml", "w") as cw:
+with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
+          "ml", "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 config_vals['d'] = d + 7
-with open("config_for_update_avr7d_array_range_7d_py.yaml", "w") as cw:
+with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
+          "ml", "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 repo = g.get_user().get_repo("scv2pl")
-contents1 = repo.get_contents("config_for_update_avr7d_array_range_7d_py.yaml")
-with open('config_for_update_avr7d_array_range_7d_py.yaml', 'r') as file:
+contents1 = repo.get_contents(
+    "/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.yaml")
+with open('/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya'
+          'ml', 'r') as file:
     content1 = file.read()
 # update
 repo.update_file(contents1.path,
@@ -289,8 +297,10 @@ repo.update_file(contents1.path,
 print(content1)
 
 repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
-contents2 = repo.get_contents("config_for_update_avr7d_array_range_7d_py.yaml")
-with open('config_for_update_avr7d_array_range_7d_py.yaml', 'r') as file:
+contents2 = repo.get_contents("/CORE/sunday_update/config_for_update_avr7d_arra"
+                              "y_range_7d_py.yaml")
+with open('/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya'
+          'ml', 'r') as file:
     content2 = file.read()
 # update
 repo.update_file(contents2.path,
