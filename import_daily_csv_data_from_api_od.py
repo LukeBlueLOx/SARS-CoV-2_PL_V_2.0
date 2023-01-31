@@ -31,7 +31,7 @@ print('DATE: ' + a)
 print('"stan_rekordu_na": ' + c)
 file1 = a + '.csv'
 file2 = a + '.csv'
-script_path = ""+str(CORE)+"startupscript_2.sh"
+script_path = ""+str(MAIN)+"startupscript_2.sh"
 
 df1 = pd.read_csv(Source1, sep=sep, encoding="")
 if 'liczba_nowych_zakazen' not in df1.columns:

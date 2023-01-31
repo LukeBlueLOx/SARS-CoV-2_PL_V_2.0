@@ -28,7 +28,7 @@ creds = service_account.Credentials.from_service_account_file(
 service = build('sheets', 'v4', credentials=creds)
 sheet = service.spreadsheets()
 
-with open(""+str(CORE)+"config_create_sheets.yaml", "r") as cr:
+with open(""+str(MAIN)+"config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
 Source1 = config_vals['Source1']
 Source2 = config_vals['Source2']
