@@ -5,8 +5,10 @@ import yaml
 import time
 import subprocess
 
-with open("/app/config_create_sheets.yaml", "r") as cr:
+with open("config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
+MAIN = config_vals['MAIN']
+CORE = config_vals['CORE']
 Source1 = config_vals['api_daily_data_Source1']
 Source2 = config_vals['api_daily_data_Source2']
 sep = config_vals['sep']
@@ -23,13 +25,13 @@ b = datetime.today() - timedelta(days=1)
 c = b.strftime('%Y-%m-%d')
 t = datetime.today().strftime('%Y-%m-%d')
 config_vals['datetime'] = t
-with open("/app/config_create_sheets.yaml","w") as cw:
+with open(""+str(MAIN)+"config_create_sheets.yaml","w") as cw:
     yaml.dump(config_vals, cw, default_flow_style=True)
 print('DATE: ' + a)
 print('"stan_rekordu_na": ' + c)
 file1 = a + '.csv'
 file2 = a + '.csv'
-script_path = "/app/CORE/startupscript_2.sh"
+script_path = ""+str(CORE)+"startupscript_2.sh"
 
 df1 = pd.read_csv(Source1, sep=sep, encoding="")
 if 'liczba_nowych_zakazen' not in df1.columns:
