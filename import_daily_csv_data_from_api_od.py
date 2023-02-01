@@ -17,21 +17,22 @@ save_path_extract2 = config_vals['save_path_extract2']
 s = config_vals['g']
 g = Github(s)
 
-# 'YYYMMDD'
-a = datetime.today().strftime('%Y%m%d')
+t = datetime.today().strftime('%Y-%m-%d')
+format = "%Y-%m-%d"
+t = datetime.strptime(t, format).date()
+a = t.strftime('%Y%m%d')
 sheet_id1 = a
 sheet_id2 = a
-b = datetime.today() - timedelta(days=1)
-c = b.strftime('%Y-%m-%d')
-t = datetime.today().strftime('%Y-%m-%d')
+b = t - timedelta(days=1)
+
 config_vals['datetime'] = t
 with open(""+str(MAIN)+"config_create_sheets.yaml","w") as cw:
     yaml.dump(config_vals, cw, default_flow_style=True)
-print('DATE: ' + a)
-print('"stan_rekordu_na": ' + c)
+print('DATE: ' + str(t))
+print('"stan_rekordu_na": ' + str(b))
 file1 = a + '.csv'
 file2 = a + '.csv'
-script_path = ""+str(MAIN)+"startupscript_2.sh"
+script_path = ""+str(MAIN)+"startupscript2.sh"
 
 df1 = pd.read_csv(Source1, sep=sep, encoding="")
 if 'liczba_nowych_zakazen' not in df1.columns:
@@ -70,7 +71,7 @@ check_date = df2.at[0, 'stan_rekordu_na']
 print('"stan_rekordu_na" from source: ' + check_date)
 print('Whether: "stan_rekordu_na" from source = "stan_rekordu_na" ???:')
 
-while check_date == c:
+while check_date == str(b):
     print('YES')
     df1.to_csv(save_path_extract1 + (a) + '.csv', index=False)
     df2.to_csv(save_path_extract2 + (a) + '.csv', index=False)
@@ -80,13 +81,13 @@ while check_date == c:
     file_path = 'DATA/Source1/'+(a)+'.csv'
     with open(file_path, 'r') as file:
         content = file.read()
-    repo.create_file(file_path, "Save: DATA/Source1/"+str(a)+".csv",
+    repo.create_file(file_path, "Save: DATA/Source1/"+(a)+".csv",
                      content)
 
     file_path = 'DATA/Source2/'+(a)+'.csv'
     with open(file_path, 'r') as file:
         content = file.read()
-    repo.create_file(file_path, "Save: DATA/Source2/"+str(a)+".csv",
+    repo.create_file(file_path, "Save: DATA/Source2/"+(a)+".csv",
                      content)
     time.sleep(15)
 

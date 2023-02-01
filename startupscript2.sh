@@ -1,5 +1,4 @@
 #!/bin/bash
-
 config_vals=$(python3 -c "import yaml; print(yaml.safe_load(open('config_create_sheets.yaml')))")
 MAIN=$(echo $config_vals | python3 -c "import sys; config=eval(sys.stdin.read()); print(config['MAIN'])")
 CORE=$(echo $config_vals | python3 -c "import sys; config=eval(sys.stdin.read()); print(config['CORE'])")
