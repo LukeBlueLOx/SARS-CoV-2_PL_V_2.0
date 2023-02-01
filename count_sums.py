@@ -4,7 +4,7 @@ from datetime import timedelta
 import yaml
 import time
 
-with open("/home/blox_land/PycharmProjects/SARS-CoV-2_PL_V2/config_create_sheets.yaml", "r") as cr:
+with open("config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
 MAIN = config_vals['MAIN']
 CORE = config_vals['CORE']
