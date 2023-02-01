@@ -118,6 +118,22 @@ request = service.spreadsheets().batchUpdate(
     spreadsheetId=spreadsheet_id1, body=RUN).execute()
 print(request)
 
+RUN = {'requests': [
+    {
+        "deleteDimension": {
+            "range": {
+                "sheetId": a,
+                "dimension": "COLUMNS",
+                "startIndex": 19,
+                "endIndex": 26
+            }
+        }
+    }
+]}
+request = service.spreadsheets().batchUpdate(
+    spreadsheetId=spreadsheet_id1, body=RUN).execute()
+print(request)
+
 RUN = [['=IMPORTDATA("' + str(filepaths2) + '",",")']]
 request = service.spreadsheets().values().update(
     spreadsheetId=spreadsheet_id2,
@@ -184,6 +200,22 @@ RUN = {'requests': [
                 "dimension": "ROWS",
                 "startIndex": 382,
                 "endIndex": 1200
+            }
+        }
+    }
+]}
+request = service.spreadsheets().batchUpdate(
+    spreadsheetId=spreadsheet_id2, body=RUN).execute()
+print(request)
+
+RUN = {'requests': [
+    {
+        "deleteDimension": {
+            "range": {
+                "sheetId": a,
+                "dimension": "COLUMNS",
+                "startIndex": 20,
+                "endIndex": 26
             }
         }
     }
