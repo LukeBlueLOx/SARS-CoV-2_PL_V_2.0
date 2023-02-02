@@ -8,6 +8,7 @@
   api_daily_data_Source2: 'https://api.dane.gov.pl/resources/33186,aktualne-dane-dla-powiatow/file',
   datetime: 2023-01-30, sep: ;, n: 0, g: "********************", 
   formula1: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1_iDGD9XEd5Lw_AvmVo3XkAa4rBstaemnHeLKpyTgt8g"',
+  formula2: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU","COMPUTABLE!A1:I382")',
   save_path1: DATA/Source1/voivodeships.zip, save_path2: DATA/Source2/districts.zip, 
   save_path_extract1: DATA/Source1/, save_path_extract2: DATA/Source2/,
   url_source1: 'https://api.dane.gov.pl/resources/33193,archiwalne-dane-dla-wojewodztw/file',
