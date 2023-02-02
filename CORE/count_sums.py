@@ -1,6 +1,9 @@
+from github import Github
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
+import gspread
 from datetime import timedelta
+import csv
 import yaml
 import time
 
@@ -21,11 +24,15 @@ with open(""+str(MAIN)+"config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
 SPREADSHEET_ID1 = config_vals['ID2']
 SPREADSHEET_ID2 = config_vals['ID4']
+T4 = config_vals['T4']
 formula2 = config_vals['formula2']
+save_path_extract3 = config_vals['save_path_extract3']
+s = config_vals['g']
+gg = Github(s)
 sheet_id1 = '0'
+
 t = config_vals['datetime']
 sheet_id2 = t.strftime('%Y%m%d')
-
 a = t
 datetime = t
 print(datetime)
@@ -252,3 +259,22 @@ request = service.spreadsheets().batchUpdate(
     spreadsheetId=SPREADSHEET_ID2,
     body=RUN).execute()
 print(request)
+
+client = gspread.authorize(creds)
+spreadsheet = client.open_by_key(SPREADSHEET_ID2)
+worksheetName = ""+str(t)+" - SUM"
+worksheet = spreadsheet.worksheet(worksheetName)
+filename = save_path_extract3 + sheet_id2 + "_SUM" + ".csv"
+with open(filename, 'w', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerows(worksheet.get_all_values())
+
+repo = gg.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
+
+file_path = save_path_extract3 + str(sheet_id2) + "_SUM" + ".csv"
+with open(file_path, 'r') as file:
+    content = file.read()
+repo.create_file(
+    file_path,
+    "Save: DATA/SUM/" + str(sheet_id2) + "_SUM" + ".csv",
+    content)
