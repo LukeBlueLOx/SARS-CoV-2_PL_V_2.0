@@ -1,10 +1,18 @@
-from googleapiclient.discovery import build
+from github import Github
 from google.oauth2 import service_account
+from googleapiclient.discovery import build
+import gspread
 from datetime import timedelta
+import csv
 import yaml
 import time
 
-SERVICE_ACCOUNT_FILE = 'sars-cov-2-poland.json'
+with open("config_create_sheets.yaml", "r") as cr:
+    config_vals = yaml.full_load(cr)
+MAIN = config_vals['MAIN']
+CORE = config_vals['CORE']
+
+SERVICE_ACCOUNT_FILE = ''+str(CORE)+'sars-cov-2-poland.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE,
@@ -12,85 +20,61 @@ creds = service_account.Credentials.from_service_account_file(
 service = build('sheets', 'v4', credentials=creds)
 sheet = service.spreadsheets()
 
-config_vals = ""
-with open("config_create_sheets.yaml", "r") as cr:
+with open(""+str(MAIN)+"config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
-SPREADSHEET_ID1 = config_vals['ID1V1']
-SPREADSHEET_ID2 = config_vals['ID2V1']
-sheet_id2 = '934571935'
-datetime = config_vals['datetime']
+SPREADSHEET_ID1 = config_vals['ID1']
+SPREADSHEET_ID2 = config_vals['ID3']
+SPREADSHEET_ID3 = config_vals['ID4']
+T4 = config_vals['T4']
 formula1 = config_vals['formula1']
+formula3 = config_vals['formula3']
+save_path_extract4 = config_vals['save_path_extract4']
+s = config_vals['g']
+gg = Github(s)
+sheet_id1 = '2025827439'
+sheet_id2 = '2025827439'
 
-a = datetime
-print(a)
-yesterday1 = datetime - timedelta(days=1)
-b = yesterday1
-yesterday2 = datetime - timedelta(days=2)
-c = yesterday2
-yesterday3 = datetime - timedelta(days=3)
-d = yesterday3
-yesterday4 = datetime - timedelta(days=4)
-e = yesterday4
-yesterday5 = datetime - timedelta(days=5)
-f = yesterday5
-yesterday6 = datetime - timedelta(days=6)
-g = yesterday6
-yesterday7 = datetime - timedelta(days=7)
-h = yesterday7
-yesterday8 = datetime - timedelta(days=8)
-i = yesterday8
-yesterday9 = datetime - timedelta(days=9)
-j = yesterday9
-yesterday10 = datetime - timedelta(days=10)
-k = yesterday10
-yesterday11 = datetime - timedelta(days=11)
-l = yesterday11
-yesterday12 = datetime - timedelta(days=12)
-m = yesterday12
-yesterday13 = datetime - timedelta(days=13)
-n = yesterday13
-yesterday14 = datetime - timedelta(days=14)
-o = yesterday14
-yesterday15 = datetime - timedelta(days=15)
-p = yesterday15
-yesterday16 = datetime - timedelta(days=16)
-r = yesterday16
-yesterday17 = datetime - timedelta(days=17)
-s = yesterday17
-yesterday18 = datetime - timedelta(days=18)
-t = yesterday18
-yesterday19 = datetime - timedelta(days=19)
-u = yesterday19
-yesterday20 = datetime - timedelta(days=20)
-v = yesterday20
-yesterday21 = datetime - timedelta(days=21)
-w = yesterday21
-yesterday22 = datetime - timedelta(days=22)
-x = yesterday22
-yesterday23 = datetime - timedelta(days=23)
-y = yesterday23
-yesterday24 = datetime - timedelta(days=24)
-z = yesterday24
-yesterday25 = datetime - timedelta(days=25)
-aa = yesterday25
-yesterday26 = datetime - timedelta(days=26)
-ab = yesterday26
-yesterday27 = datetime - timedelta(days=27)
-ac = yesterday27
-yesterday28 = datetime - timedelta(days=28)
-ad = yesterday28
-yesterday29 = datetime - timedelta(days=29)
-ae = yesterday29
-yesterday30 = datetime - timedelta(days=30)
-af = yesterday30
-yesterday31 = datetime - timedelta(days=31)
-ag = yesterday31
-yesterday32 = datetime - timedelta(days=32)
-ah = yesterday32
-yesterday33 = datetime - timedelta(days=33)
-ai = yesterday33
+t = config_vals['datetime']
+sheet_id3 = t.strftime('%Y%m%d')
+tt = t.strftime('%Y-%m-%d')
+a = t
+datetime = t
+print(datetime)
+b = datetime - timedelta(days=1)
+c = datetime - timedelta(days=2)
+d = datetime - timedelta(days=3)
+e = datetime - timedelta(days=4)
+f = datetime - timedelta(days=5)
+g = datetime - timedelta(days=6)
+h = datetime - timedelta(days=7)
+i = datetime - timedelta(days=8)
+j = datetime - timedelta(days=9)
+k = datetime - timedelta(days=10)
+l = datetime - timedelta(days=11)
+m = datetime - timedelta(days=12)
+n = datetime - timedelta(days=13)
+o = datetime - timedelta(days=14)
+p = datetime - timedelta(days=15)
+r = datetime - timedelta(days=16)
+s = datetime - timedelta(days=17)
+t = datetime - timedelta(days=18)
+u = datetime - timedelta(days=19)
+v = datetime - timedelta(days=20)
+w = datetime - timedelta(days=21)
+x = datetime - timedelta(days=22)
+y = datetime - timedelta(days=23)
+z = datetime - timedelta(days=24)
+aa = datetime - timedelta(days=25)
+ab = datetime - timedelta(days=26)
+ac = datetime - timedelta(days=27)
+ad = datetime - timedelta(days=28)
+ae = datetime - timedelta(days=29)
+af = datetime - timedelta(days=30)
+ag = datetime - timedelta(days=31)
+ah = datetime - timedelta(days=32)
+ai = datetime - timedelta(days=33)
 
-RUN1 = [
+RUN = [
     ["=({'"+str(ai)+"'!D2}+{'"+str(ah)+"'!D2}+{'"+str(ag)+"'!D2}+{'"+str(
      af)+"'!D2}+{'"+str(ae)+"'!D2}+{'"+str(ad)+"'!D2}+{'"+str(ac)+"'!D2})/7",
      "=({'"+str(ai)+"'!K2}+{'"+str(ah)+"'!K2}+{'"+str(ag)+"'!K2}+{'"+str(af)+
@@ -230,160 +214,252 @@ RUN1 = [
      "=({'"+str(o)+"'!K2}+{'"+str(n)+"'!K2}+{'"+str(m)+"'!K2}+{'"+str(l)+
      "'!K2}+{'"+str(k)+"'!K2}+{'"+str(j)+"'!K2}+{'"+str(i)+"'!K2})/7",
      "=({'"+str(o)+"'!N2}+{'"+str(n)+"'!N2}+{'"+str(m)+"'!N2}+{'"+str(l)+
-     "'!N2}+{'"+str(k)+"'!N2}+{'"+str(j)+"'!N2}+{'"+str(i)+"'!N2})/7"]
+     "'!N2}+{'"+str(k)+"'!N2}+{'"+str(j)+"'!N2}+{'"+str(i)+"'!N2})/7"],
+
+    ["=({'"+str(n)+"'!D2}+{'"+str(m)+"'!D2}+{'"+str(l)+"'!D2}+{'"+str(
+     k)+"'!D2}+{'"+str(j)+"'!D2}+{'"+str(i)+"'!D2}+{'"+str(h)+"'!D2})/7",
+     "=({'"+str(n)+"'!K2}+{'"+str(m)+"'!K2}+{'"+str(l)+"'!K2}+{'"+str(k)+
+     "'!K2}+{'"+str(j)+"'!K2}+{'"+str(i)+"'!K2}+{'"+str(h)+"'!K2})/7",
+     "=({'"+str(n)+"'!N2}+{'"+str(m)+"'!N2}+{'"+str(l)+"'!N2}+{'"+str(k)+
+     "'!N2}+{'"+str(j)+"'!N2}+{'"+str(i)+"'!N2}+{'"+str(h)+"'!N2})/7"],
+
+    ["=({'"+str(m)+"'!D2}+{'"+str(l)+"'!D2}+{'"+str(k)+"'!D2}+{'"+str(
+     j)+"'!D2}+{'"+str(i)+"'!D2}+{'"+str(h)+"'!D2}+{'"+str(g)+"'!D2})/7",
+     "=({'"+str(m)+"'!K2}+{'"+str(l)+"'!K2}+{'"+str(k)+"'!K2}+{'"+str(j)+
+     "'!K2}+{'"+str(i)+"'!K2}+{'"+str(h)+"'!K2}+{'"+str(g)+"'!K2})/7",
+     "=({'"+str(m)+"'!N2}+{'"+str(l)+"'!N2}+{'"+str(k)+"'!N2}+{'"+str(j)+
+     "'!N2}+{'"+str(i)+"'!N2}+{'"+str(h)+"'!N2}+{'"+str(g)+"'!N2})/7"],
+
+    ["=({'"+str(l)+"'!D2}+{'"+str(k)+"'!D2}+{'"+str(j)+"'!D2}+{'"+str(
+     i)+"'!D2}+{'"+str(h)+"'!D2}+{'"+str(g)+"'!D2}+{'"+str(f)+"'!D2})/7",
+     "=({'"+str(l)+"'!K2}+{'"+str(k)+"'!K2}+{'"+str(j)+"'!K2}+{'"+str(i)+
+     "'!K2}+{'"+str(h)+"'!K2}+{'"+str(g)+"'!K2}+{'"+str(f)+"'!K2})/7",
+     "=({'"+str(l)+"'!N2}+{'"+str(k)+"'!N2}+{'"+str(j)+"'!N2}+{'"+str(i)+
+     "'!N2}+{'"+str(h)+"'!N2}+{'"+str(g)+"'!N2}+{'"+str(f)+"'!N2})/7"],
+
+    ["=({'"+str(k)+"'!D2}+{'"+str(j)+"'!D2}+{'"+str(i)+"'!D2}+{'"+str(
+     h)+"'!D2}+{'"+str(g)+"'!D2}+{'"+str(f)+"'!D2}+{'"+str(e)+"'!D2})/7",
+     "=({'"+str(k)+"'!K2}+{'"+str(j)+"'!K2}+{'"+str(i)+"'!K2}+{'"+str(h)+
+     "'!K2}+{'"+str(g)+"'!K2}+{'"+str(f)+"'!K2}+{'"+str(e)+"'!K2})/7",
+     "=({'"+str(k)+"'!N2}+{'"+str(j)+"'!N2}+{'"+str(i)+"'!N2}+{'"+str(h)+
+     "'!N2}+{'"+str(g)+"'!N2}+{'"+str(f)+"'!N2}+{'"+str(e)+"'!N2})/7"],
+
+    ["=({'"+str(j)+"'!D2}+{'"+str(i)+"'!D2}+{'"+str(h)+"'!D2}+{'"+str(
+     g)+"'!D2}+{'"+str(f)+"'!D2}+{'"+str(e)+"'!D2}+{'"+str(d)+"'!D2})/7",
+     "=({'"+str(j)+"'!K2}+{'"+str(i)+"'!K2}+{'"+str(h)+"'!K2}+{'"+str(g)+
+     "'!K2}+{'"+str(f)+"'!K2}+{'"+str(e)+"'!K2}+{'"+str(d)+"'!K2})/7",
+     "=({'"+str(j)+"'!N2}+{'"+str(i)+"'!N2}+{'"+str(h)+"'!N2}+{'"+str(g)+
+     "'!N2}+{'"+str(f)+"'!N2}+{'"+str(e)+"'!N2}+{'"+str(d)+"'!N2})/7"],
+
+    ["=({'"+str(i)+"'!D2}+{'"+str(h)+"'!D2}+{'"+str(g)+"'!D2}+{'"+str(
+     f)+"'!D2}+{'"+str(e)+"'!D2}+{'"+str(d)+"'!D2}+{'"+str(c)+"'!D2})/7",
+     "=({'"+str(i)+"'!K2}+{'"+str(h)+"'!K2}+{'"+str(g)+"'!K2}+{'"+str(f)+
+     "'!K2}+{'"+str(e)+"'!K2}+{'"+str(d)+"'!K2}+{'"+str(c)+"'!K2})/7",
+     "=({'"+str(i)+"'!N2}+{'"+str(h)+"'!N2}+{'"+str(g)+"'!N2}+{'"+str(f)+
+     "'!N2}+{'"+str(e)+"'!N2}+{'"+str(d)+"'!N2}+{'"+str(c)+"'!N2})/7"],
+
+    ["=({'"+str(h)+"'!D2}+{'"+str(g)+"'!D2}+{'"+str(f)+"'!D2}+{'"+str(
+     e)+"'!D2}+{'"+str(d)+"'!D2}+{'"+str(c)+"'!D2}+{'"+str(b)+"'!D2})/7",
+     "=({'"+str(h)+"'!K2}+{'"+str(g)+"'!K2}+{'"+str(f)+"'!K2}+{'"+str(e)+
+     "'!K2}+{'"+str(d)+"'!K2}+{'"+str(c)+"'!K2}+{'"+str(b)+"'!K2})/7",
+     "=({'"+str(h)+"'!N2}+{'"+str(g)+"'!N2}+{'"+str(f)+"'!N2}+{'"+str(e)+
+     "'!N2}+{'"+str(d)+"'!N2}+{'"+str(c)+"'!N2}+{'"+str(b)+"'!N2})/7"],
+
+    ["=({'"+str(g)+"'!D2}+{'"+str(f)+"'!D2}+{'"+str(e)+"'!D2}+{'"+str(
+     d)+"'!D2}+{'"+str(c)+"'!D2}+{'"+str(b)+"'!D2}+{'"+str(a)+"'!D2})/7",
+     "=({'"+str(g)+"'!K2}+{'"+str(f)+"'!K2}+{'"+str(e)+"'!K2}+{'"+str(d)+
+     "'!K2}+{'"+str(c)+"'!K2}+{'"+str(b)+"'!K2}+{'"+str(a)+"'!K2})/7",
+     "=({'"+str(g)+"'!N2}+{'"+str(f)+"'!N2}+{'"+str(e)+"'!N2}+{'"+str(d)+
+     "'!N2}+{'"+str(c)+"'!N2}+{'"+str(b)+"'!N2}+{'"+str(a)+"'!N2})/7"]
 ]
-request1 = service.spreadsheets().values().update(
+request = service.spreadsheets().values().update(
     spreadsheetId=SPREADSHEET_ID1,
-    range="O!A1",
+    range="IOTR!A1",
     valueInputOption="USER_ENTERED",
-    body={"values": RUN1}).execute()
-print(request1)
+    body={"values": RUN}).execute()
+print(request)
 
-RUN2 = [
-    [''+formula1+',"O!A1:C1")',"", "", str(ac)],
-    [''+formula1+',"O!A2:C2")',"", "", str(ab)],
-    [''+formula1+',"O!A3:C3")',"", "", str(aa)],
-    [''+formula1+',"O!A4:C4")',"", "", str(z)],
-    [''+formula1+',"O!A5:C5")',"", "", str(y)],
-    [''+formula1+',"O!A6:C6")',"", "", str(x)],
-    [''+formula1+',"O!A7:C7")',"", "", str(w)],
-    [''+formula1+',"O!A8:C8")',"", "", str(v)],
-    [''+formula1+',"O!A9:C9")',"", "", str(u)],
-    [''+formula1+',"O!A10:C10")',"", "", str(t)],
-    [''+formula1+',"O!A11:C11")',"", "", str(s)],
-    [''+formula1+',"O!A12:C12")',"", "", str(r)],
-    [''+formula1+',"O!A13:C13")',"", "", str(p)],
-    [''+formula1+',"O!A14:C14")',"", "", str(o)],
-    [''+formula1+',"O!A15:C15")',"", "", str(n)],
-    [''+formula1+',"O!A16:C16")',"", "", str(m)],
-    [''+formula1+',"O!A17:C17")',"", "", str(l)],
-    [''+formula1+',"O!A18:C18")',"", "", str(k)],
-    [''+formula1+',"O!A19:C19")',"", "", str(j)],
-    [''+formula1+',"O!A20:C20")',"", "", str(i)],
-
-    ["=({'"+str(n)+"'!E2}+{'"+str(m)+"'!E2}+{'"+str(l)+"'!E2}+{'"+str(
-     k)+"'!E2}+{'"+str(j)+"'!E2}+{'"+str(i)+"'!E2}+{'"+str(h)+"'!E2})/7",
-     "=({'"+str(n)+"'!L2}+{'"+str(m)+"'!L2}+{'"+str(l)+"'!L2}+{'"+str(k)+
-     "'!L2}+{'"+str(j)+"'!L2}+{'"+str(i)+"'!L2}+{'"+str(h)+"'!L2})/7",
-     "=({'"+str(n)+"'!O2}+{'"+str(m)+"'!O2}+{'"+str(l)+"'!O2}+{'"+str(k)+
-     "'!O2}+{'"+str(j)+"'!O2}+{'"+str(i)+"'!O2}+{'"+str(h)+"'!O2})/7",str(h)],
-
-    ["=({'"+str(m)+"'!E2}+{'"+str(l)+"'!E2}+{'"+str(k)+"'!E2}+{'"+str(
-     j)+"'!E2}+{'"+str(i)+"'!E2}+{'"+str(h)+"'!E2}+{'"+str(g)+"'!E2})/7",
-     "=({'"+str(m)+"'!L2}+{'"+str(l)+"'!L2}+{'"+str(k)+"'!L2}+{'"+str(j)+
-     "'!L2}+{'"+str(i)+"'!L2}+{'"+str(h)+"'!L2}+{'"+str(g)+"'!L2})/7",
-     "=({'"+str(m)+"'!O2}+{'"+str(l)+"'!O2}+{'"+str(k)+"'!O2}+{'"+str(j)+
-     "'!O2}+{'"+str(i)+"'!O2}+{'"+str(h)+"'!O2}+{'"+str(g)+"'!O2})/7",str(g)],
-
-    ["=({'"+str(l)+"'!E2}+{'"+str(k)+"'!E2}+{'"+str(j)+"'!E2}+{'"+str(
-     i)+"'!E2}+{'"+str(h)+"'!E2}+{'"+str(g)+"'!E2}+{'"+str(f)+"'!E2})/7",
-     "=({'"+str(l)+"'!L2}+{'"+str(k)+"'!L2}+{'"+str(j)+"'!L2}+{'"+str(i)+
-     "'!L2}+{'"+str(h)+"'!L2}+{'"+str(g)+"'!L2}+{'"+str(f)+"'!L2})/7",
-     "=({'"+str(l)+"'!O2}+{'"+str(k)+"'!O2}+{'"+str(j)+"'!O2}+{'"+str(i)+
-     "'!O2}+{'"+str(h)+"'!O2}+{'"+str(g)+"'!O2}+{'"+str(f)+"'!O2})/7",str(f)],
-
-    ["=({'"+str(k)+"'!E2}+{'"+str(j)+"'!E2}+{'"+str(i)+"'!E2}+{'"+str(
-     h)+"'!E2}+{'"+str(g)+"'!E2}+{'"+str(f)+"'!E2}+{'"+str(e)+"'!E2})/7",
-     "=({'"+str(k)+"'!L2}+{'"+str(j)+"'!L2}+{'"+str(i)+"'!L2}+{'"+str(h)+
-     "'!L2}+{'"+str(g)+"'!L2}+{'"+str(f)+"'!L2}+{'"+str(e)+"'!L2})/7",
-     "=({'"+str(k)+"'!O2}+{'"+str(j)+"'!O2}+{'"+str(i)+"'!O2}+{'"+str(h)+
-     "'!O2}+{'"+str(g)+"'!O2}+{'"+str(f)+"'!O2}+{'"+str(e)+"'!O2})/7",str(e)],
-
-    ["=({'"+str(j)+"'!E2}+{'"+str(i)+"'!E2}+{'"+str(h)+"'!E2}+{'"+str(
-     g)+"'!E2}+{'"+str(f)+"'!E2}+{'"+str(e)+"'!E2}+{'"+str(d)+"'!E2})/7",
-     "=({'"+str(j)+"'!L2}+{'"+str(i)+"'!L2}+{'"+str(h)+"'!L2}+{'"+str(g)+
-     "'!L2}+{'"+str(f)+"'!L2}+{'"+str(e)+"'!L2}+{'"+str(d)+"'!L2})/7",
-     "=({'"+str(j)+"'!O2}+{'"+str(i)+"'!O2}+{'"+str(h)+"'!O2}+{'"+str(g)+
-     "'!O2}+{'"+str(f)+"'!O2}+{'"+str(e)+"'!O2}+{'"+str(d)+"'!O2})/7",str(d)],
-
-    ["=({'"+str(i)+"'!E2}+{'"+str(h)+"'!E2}+{'"+str(g)+"'!E2}+{'"+str(
-     f)+"'!E2}+{'"+str(e)+"'!E2}+{'"+str(d)+"'!E2}+{'"+str(c)+"'!E2})/7",
-     "=({'"+str(i)+"'!L2}+{'"+str(h)+"'!L2}+{'"+str(g)+"'!L2}+{'"+str(f)+
-     "'!L2}+{'"+str(e)+"'!L2}+{'"+str(d)+"'!L2}+{'"+str(c)+"'!L2})/7",
-     "=({'"+str(i)+"'!O2}+{'"+str(h)+"'!O2}+{'"+str(g)+"'!O2}+{'"+str(f)+
-     "'!O2}+{'"+str(e)+"'!O2}+{'"+str(d)+"'!O2}+{'"+str(c)+"'!O2})/7",str(c)],
-
-    ["=({'"+str(h)+"'!E2}+{'"+str(g)+"'!E2}+{'"+str(f)+"'!E2}+{'"+str(
-     e)+"'!E2}+{'"+str(d)+"'!E2}+{'"+str(c)+"'!E2}+{'"+str(b)+"'!E2})/7",
-     "=({'"+str(h)+"'!L2}+{'"+str(g)+"'!L2}+{'"+str(f)+"'!L2}+{'"+str(e)+
-     "'!L2}+{'"+str(d)+"'!L2}+{'"+str(c)+"'!L2}+{'"+str(b)+"'!L2})/7",
-     "=({'"+str(h)+"'!O2}+{'"+str(g)+"'!O2}+{'"+str(f)+"'!O2}+{'"+str(e)+
-     "'!O2}+{'"+str(d)+"'!O2}+{'"+str(c)+"'!O2}+{'"+str(b)+"'!O2})/7",str(b)],
-
-    ["=({'"+str(g)+"'!E2}+{'"+str(f)+"'!E2}+{'"+str(e)+"'!E2}+{'"+str(
-     d)+"'!E2}+{'"+str(c)+"'!E2}+{'"+str(b)+"'!E2}+{'"+str(a)+"'!E2})/7",
-     "=({'"+str(g)+"'!L2}+{'"+str(f)+"'!L2}+{'"+str(e)+"'!L2}+{'"+str(d)+
-     "'!L2}+{'"+str(c)+"'!L2}+{'"+str(b)+"'!L2}+{'"+str(a)+"'!L2})/7",
-     "=({'"+str(g)+"'!O2}+{'"+str(f)+"'!O2}+{'"+str(e)+"'!O2}+{'"+str(d)+
-     "'!O2}+{'"+str(c)+"'!O2}+{'"+str(b)+"'!O2}+{'"+str(a)+"'!O2})/7",str(a)]
-]
-request2 = service.spreadsheets().values().update(
+request = sheet.values().clear(
     spreadsheetId=SPREADSHEET_ID2,
-    range="14D TREND - avrxypl-iot!A2",
-    valueInputOption="USER_ENTERED",
-    body={"values": RUN2}).execute()
-time.sleep(15)
-print(request2)
+    range="IOTR!A2:C29").execute()
+print(request)
 
-RUN3 = {'requests': [
+RUN = [
+    ['' + formula1 + ',"IOTR!A1:C1")', "", "", str(ac)],
+    ['' + formula1 + ',"IOTR!A2:C2")', "", "", str(ab)],
+    ['' + formula1 + ',"IOTR!A3:C3")', "", "", str(aa)],
+    ['' + formula1 + ',"IOTR!A4:C4")', "", "", str(z)],
+    ['' + formula1 + ',"IOTR!A5:C5")', "", "", str(y)],
+    ['' + formula1 + ',"IOTR!A6:C6")', "", "", str(x)],
+    ['' + formula1 + ',"IOTR!A7:C7")', "", "", str(w)],
+    ['' + formula1 + ',"IOTR!A8:C8")', "", "", str(v)],
+    ['' + formula1 + ',"IOTR!A9:C9")', "", "", str(u)],
+    ['' + formula1 + ',"IOTR!A10:C10")', "", "", str(t)],
+    ['' + formula1 + ',"IOTR!A11:C11")', "", "", str(s)],
+    ['' + formula1 + ',"IOTR!A12:C12")', "", "", str(r)],
+    ['' + formula1 + ',"IOTR!A13:C13")', "", "", str(p)],
+    ['' + formula1 + ',"IOTR!A14:C14")', "", "", str(o)],
+    ['' + formula1 + ',"IOTR!A15:C15")', "", "", str(n)],
+    ['' + formula1 + ',"IOTR!A16:C16")', "", "", str(m)],
+    ['' + formula1 + ',"IOTR!A17:C17")', "", "", str(l)],
+    ['' + formula1 + ',"IOTR!A18:C18")', "", "", str(k)],
+    ['' + formula1 + ',"IOTR!A19:C19")', "", "", str(j)],
+    ['' + formula1 + ',"IOTR!A20:C20")', "", "", str(i)],
+    ['' + formula1 + ',"IOTR!A21:C21")', "", "", str(h)],
+    ['' + formula1 + ',"IOTR!A22:C22")', "", "", str(g)],
+    ['' + formula1 + ',"IOTR!A23:C23")', "", "", str(f)],
+    ['' + formula1 + ',"IOTR!A24:C24")', "", "", str(e)],
+    ['' + formula1 + ',"IOTR!A25:C25")', "", "", str(d)],
+    ['' + formula1 + ',"IOTR!A26:C26")', "", "", str(c)],
+    ['' + formula1 + ',"IOTR!A27:C27")', "", "", str(b)],
+    ['' + formula1 + ',"IOTR!A28:C28")', "", "", str(a)]
+]
+request = service.spreadsheets().values().update(
+    spreadsheetId=SPREADSHEET_ID2,
+    range="IOTR!A2",
+    valueInputOption="USER_ENTERED",
+    body={"values": RUN}).execute()
+time.sleep(15)
+print(request)
+
+RUN = {'requests': [
     {'copyPaste': {
         'source': {
-            'sheetId': sheet_id2,
-            'startRowIndex': 0,
+            'sheetId': sheet_id1,
+            'startRowIndex': 1,
             'endRowIndex': 29,
             'startColumnIndex': 0,
-            'endColumnIndex': 4,
+            'endColumnIndex': 3,
         },
         "destination": {
-            'sheetId': sheet_id2,
-            'startRowIndex': 0,
+            'sheetId': sheet_id1,
+            'startRowIndex': 1,
             'endRowIndex': 29,
             'startColumnIndex': 0,
-            'endColumnIndex': 4,
+            'endColumnIndex': 3,
         },
         "pasteType": "Paste_Values",
     }},
 ]}
-request3 = service.spreadsheets().batchUpdate(
+request = service.spreadsheets().batchUpdate(
     spreadsheetId=SPREADSHEET_ID2,
-    body=RUN3).execute()
-print(request3)
+    body=RUN).execute()
+print(request)
 
-"""config_vals = ""
-with open("/app/config_for_delete_daily_unnecessary_sheets_py.yaml", "r") as cr:
-    config_vals = yaml.full_load(cr)
+RUN = {'requests': [
+    {'addSheet': {
+        'properties': {
+            "sheetId": sheet_id3 + str(1),
+            "title": str(tt) + " - IOTR",
+            "gridProperties": {
+                "columnCount": 13,
+                "rowCount": 29
+            }
+        },
+    }},
+]}
+request = service.spreadsheets().batchUpdate(
+    spreadsheetId=SPREADSHEET_ID3,
+    body=RUN).execute()
+print(request)
 
-d = config_vals['d']
+RUN = [[str(formula3)]]
+request = service.spreadsheets().values().update(
+    spreadsheetId=SPREADSHEET_ID3,
+    range=""+str(tt)+" - IOTR",
+    valueInputOption="USER_ENTERED",
+    body={"values": RUN}).execute()
+print(request)
+time.sleep(7)
 
-RUN4 = {'requests': [
+RUN = {'requests': [
     {'copyPaste': {
         'source': {
-            'sheetId': sheet_id2,
+            'sheetId': sheet_id3 + str(1),
             'startRowIndex': 0,
             'endRowIndex': 29,
             'startColumnIndex': 0,
             'endColumnIndex': 13,
         },
         "destination": {
-            'sheetId': str(d),
+            'sheetId': sheet_id3 + str(1),
             'startRowIndex': 0,
             'endRowIndex': 29,
-            'startColumnIndex': 12,
-            'endColumnIndex': 25,
+            'startColumnIndex': 0,
+            'endColumnIndex': 13,
         },
-        "pasteType": "Paste_Values",
-
-    }},
-
+        "pasteType": "Paste_Values"
+    }}
 ]}
+request = service.spreadsheets().batchUpdate(
+    spreadsheetId=SPREADSHEET_ID3, body=RUN).execute()
+print(request)
 
-request4 = service.spreadsheets().batchUpdate(
-    spreadsheetId=SPREADSHEET_ID2, body=RUN4).execute()
+RUN = {"requests": [
+    {"repeatCell": {
+        "range": {
+            "sheetId": sheet_id3 + str(1),
+            "startRowIndex": 1,
+            "endRowIndex": 29,
+            "startColumnIndex": 3,
+            "endColumnIndex": 4
+        },
+        "cell": {
+            "userEnteredFormat": {
+                "numberFormat": {
+                    "type": "DATE_TIME",
+                    "pattern": "yyyy-mm-dd"
+                }
+            }
+        },
+        "fields": "userEnteredFormat.numberFormat"
+    }}
+]}
+request = service.spreadsheets().batchUpdate(
+    spreadsheetId=SPREADSHEET_ID3,
+    body=RUN).execute()
+print(request)
 
-print(request4)
+RUN = {"requests": [
+    {"repeatCell": {
+        "range": {
+            "sheetId": sheet_id3 + str(1),
+            "startRowIndex": 1,
+            "endRowIndex": 29,
+            "startColumnIndex": 10,
+            "endColumnIndex": 11
+        },
+        "cell": {
+            "userEnteredFormat": {
+                "numberFormat": {
+                    "type": "DATE_TIME",
+                    "pattern": "yyyy-mm-dd"
+                }
+            }
+        },
+        "fields": "userEnteredFormat.numberFormat"
+    }}
+]}
+request = service.spreadsheets().batchUpdate(
+    spreadsheetId=SPREADSHEET_ID3,
+    body=RUN).execute()
+print(request)
 
-config_vals['d'] = d + 1
-with open("/app/config_for_delete_daily_unnecessary_sheets_py.yaml", "w") as cw:
-    yaml.dump(config_vals, cw, default_flow_style=True)"""
+client = gspread.authorize(creds)
+spreadsheet = client.open_by_key(SPREADSHEET_ID3)
+worksheetName = ""+str(tt)+" - IOTR"
+worksheet = spreadsheet.worksheet(worksheetName)
+filename = save_path_extract4 + sheet_id3 + "_IOTR" + ".csv"
+with open(filename, 'w', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerows(worksheet.get_all_values())
 
-print("(All Operations - Successfully!)")
+repo = gg.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
+
+file_path = save_path_extract4 + str(sheet_id3) + "_IOTR" + ".csv"
+with open(file_path, 'r') as file:
+    content = file.read()
+repo.create_file(
+    file_path,
+    "Save: DATA/IOTR/" + str(sheet_id3) + "_IOTR" + ".csv",
+    content)
