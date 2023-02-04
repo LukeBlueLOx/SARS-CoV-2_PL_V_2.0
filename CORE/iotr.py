@@ -25,7 +25,6 @@ with open(""+str(MAIN)+"config_create_sheets.yaml", "r") as cr:
 SPREADSHEET_ID1 = config_vals['ID1']
 SPREADSHEET_ID2 = config_vals['ID3']
 SPREADSHEET_ID3 = config_vals['ID4']
-T4 = config_vals['T4']
 formula1 = config_vals['formula1']
 formula3 = config_vals['formula3']
 save_path_extract4 = config_vals['save_path_extract4']
