@@ -1,3 +1,2 @@
-{a: 679, b: 686, c: 693, d: 687,
- formula1: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU"',
- formula2: 'IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU"'}
+{a: 693, b: 700, c: 707, d: 701, formula1: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU"',
+  formula2: 'IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU"'}
