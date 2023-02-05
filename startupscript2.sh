@@ -9,3 +9,7 @@ python3 "$CORE/import_csv_data_from_urls.py"
 python3 "$CORE/count_sums.py"
 python3 "$CORE/iotr.py"
 python3 "$CORE/7davrdlr14d.py"
+python3 "$CORE/datawrapper_api_update_external_data.py"
+python3 "$CORE/7davrr368_dash_bar_chart.py"
+python3 "$CORE/14dsumdvsv_dash_scatterplot.py"
+

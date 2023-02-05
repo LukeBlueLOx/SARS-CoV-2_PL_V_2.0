@@ -4,7 +4,12 @@ from github import Github
 from datetime import timedelta
 import yaml
 
-SERVICE_ACCOUNT_FILE = '/app/CORE/sars-cov-2-poland.json'
+with open("config_create_sheets.yaml", "r") as cr:
+    config_vals = yaml.full_load(cr)
+MAIN = config_vals['MAIN']
+CORE = config_vals['CORE']
+
+SERVICE_ACCOUNT_FILE = ''+str(CORE)+'sars-cov-2-poland.json'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 creds = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE,
@@ -13,15 +18,14 @@ service = build('sheets', 'v4', credentials=creds)
 sheet = service.spreadsheets()
 
 config_vals = ""
-with open("/app/config_create_sheets.yaml", "r") as cr:
+with open(MAIN + "config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
 datetime = config_vals['datetime']
 s = config_vals['g']
 g = Github(s)
 
 config_vals = ""
-with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py"
-          ".yaml",
+with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py.yaml',
           "r") as cr:
    config_vals = yaml.full_load(cr)
 formula1 = config_vals['formula1']
@@ -68,7 +72,7 @@ nextday27 = datetime + timedelta(days=27)
 f3 = nextday27.strftime('%d.%m.%Y')
 nextday28 = datetime + timedelta(days=28)
 g3 = nextday28.strftime('%d.%m.%Y')
-spreadsheet_id = '1D_ykOMbV2CdHMzLGT1nPZxpLEyyNEln8nhFIn5nwsQM'
+spreadsheet_id = '17rIcj6djv7NmIC3RV16VGVkv7tTJgUd8UGvk8ruMOmU'
 sheet_id = '0'
 
 RUN1 = {'requests': [
@@ -178,7 +182,7 @@ RUN4 = [
 ]
 request4 = service.spreadsheets().values().update(
     spreadsheetId=spreadsheet_id,
-    range="Średnia 7 dni SARS-CoV-2!A"+str(d)+"",
+    range="7DAVR!A"+str(d)+"",
     valueInputOption="USER_ENTERED",
     body={"values": RUN4}).execute()
 print(request4)
@@ -201,14 +205,14 @@ RUN5 = [
 ]
 request5 = service.spreadsheets().values().update(
     spreadsheetId=spreadsheet_id,
-    range="Średnia 7 dni SARS-CoV-2!M"+str(d)+"",
+    range="7DAVR!M"+str(d)+"",
     valueInputOption="USER_ENTERED",
     body={"values": RUN5}).execute()
 print(request5)
 
 request6 = sheet.values().clear(
     spreadsheetId=spreadsheet_id,
-    range="Średnia 7 dni SARS-CoV-2!I"+str(d)+":I"+str(c)+"").execute()
+    range="7DAVR!I"+str(d)+":I"+str(c)+"").execute()
 print(request6)
 
 RUN7 = [
@@ -222,14 +226,14 @@ RUN7 = [
 ]
 request7 = service.spreadsheets().values().update(
     spreadsheetId=spreadsheet_id,
-    range="Średnia 7 dni SARS-CoV-2!I"+str(d)+"",
+    range="7DAVR!I"+str(d)+"",
     valueInputOption="USER_ENTERED",
     body={"values": RUN7}).execute()
 print(request7)
 
 request8 = sheet.values().clear(
     spreadsheetId=spreadsheet_id,
-    range="Średnia 7 dni SARS-CoV-2!O"+str(d)+":O"+str(c)+"").execute()
+    range="7DAVR!O"+str(d)+":O"+str(c)+"").execute()
 print(request8)
 
 RUN9 = [
@@ -243,7 +247,7 @@ RUN9 = [
 ]
 request9 = service.spreadsheets().values().update(
     spreadsheetId=spreadsheet_id,
-    range="Średnia 7 dni SARS-CoV-2!O"+str(d)+"",
+    range="7DAVR!O"+str(d)+"",
     valueInputOption="USER_ENTERED", body={"values": RUN9}).execute()
 print(request9)
 
@@ -264,30 +268,35 @@ request10 = service.spreadsheets().batchUpdate(
 print(request10)
 
 config_vals['a'] = a + 7
-with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
-          "ml", "w") as cw:
+with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
+                 '.yaml',
+          "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
    
 config_vals['b'] = b + 7
-with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
-          "ml", "w") as cw:
+with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
+                 '.yaml',
+          "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
    
 config_vals['c'] = c + 7
-with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
-          "ml", "w") as cw:
+with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
+                 '.yaml',
+          "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 config_vals['d'] = d + 7
-with open("/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya"
-          "ml", "w") as cw:
+with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
+                 '.yaml',
+          "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 repo = g.get_user().get_repo("scv2pl")
-contents1 = repo.get_contents(
-    "/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.yaml")
-with open('/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya'
-          'ml', 'r') as file:
+contents1 = repo.get_contents('/CORE/sunday_update/config_for_update_avr7d_arr'
+                              'ay_range_7d_py.yaml')
+with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
+                 '.yaml',
+          'r') as file:
     content1 = file.read()
 # update
 repo.update_file(contents1.path,
@@ -297,10 +306,11 @@ repo.update_file(contents1.path,
 print(content1)
 
 repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
-contents2 = repo.get_contents("/CORE/sunday_update/config_for_update_avr7d_arra"
-                              "y_range_7d_py.yaml")
-with open('/app/CORE/sunday_update/config_for_update_avr7d_array_range_7d_py.ya'
-          'ml', 'r') as file:
+contents2 = repo.get_contents('/CORE/sunday_update/config_for_update_avr7d_arr'
+                              'ay_range_7d_py.yaml')
+with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
+                 '.yaml',
+          'r') as file:
     content2 = file.read()
 # update
 repo.update_file(contents2.path,
@@ -308,5 +318,3 @@ repo.update_file(contents2.path,
                  content2,
                  contents2.sha)
 print(content2)
-   
-print("(All Operations - Successfully!)")

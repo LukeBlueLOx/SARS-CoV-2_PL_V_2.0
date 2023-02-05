@@ -9,3 +9,8 @@ CORE=$(echo "$config" | python3 -c "import sys; import yaml; config=yaml.safe_lo
 # python3 "$CORE/count_sums.py"
 # python3 "$CORE/iotr.py"
 # python3 "$CORE/7davrdlr14d.py"
+# python3 "$CORE/datawrapper_api_update_external_data.py"
+# python3 "$CORE/7davrr368_dash_bar_chart.py"
+# python3 "$CORE/14dsumdvsv_dash_scatterplot.py"
+#python3 "$CORE/sunday_update/add_weekly_sheets_set.py"
+python3 "$CORE/sunday_update/update_avr7d_array_range_7d.py"
