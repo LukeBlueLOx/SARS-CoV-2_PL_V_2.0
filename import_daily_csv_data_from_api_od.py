@@ -32,7 +32,8 @@ print('DATE: ' + str(t))
 print('"stan_rekordu_na": ' + str(b))
 file1 = a + '.csv'
 file2 = a + '.csv'
-script_path = ""+str(MAIN)+"startupscript2.sh"
+script_path1 = ""+str(MAIN)+"startupscript1.sh"
+script_path2 = ""+str(MAIN)+"startupscript2.sh"
 
 df1 = pd.read_csv(Source1, sep=sep, encoding="")
 if 'liczba_nowych_zakazen' not in df1.columns:
@@ -91,7 +92,11 @@ while check_date == str(b):
                      content)
     time.sleep(15)
 
-    result = subprocess.call(['bash', script_path])
+    current_day = datetime.datetime.today().weekday()
+    if current_day == 6:
+        result = subprocess.call(['bash', script_path1])
+    else:
+        result = subprocess.call(['bash', script_path2])
 
     break
 else:
