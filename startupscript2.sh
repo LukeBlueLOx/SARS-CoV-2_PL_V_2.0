@@ -12,4 +12,6 @@ python3 "$CORE/7davrdlr14d.py"
 python3 "$CORE/datawrapper_api_update_external_data.py"
 python3 "$CORE/7davrr368_dash_bar_chart.py"
 python3 "$CORE/14dsumdvsv_dash_scatterplot.py"
-
+python3 "$CORE/diid368_dash_bar_chart.py"
+python3 "$CORE/7ddr_dash_table.py"
+python3 "$CORE/favrnd21_dash_bar_chart.py"
