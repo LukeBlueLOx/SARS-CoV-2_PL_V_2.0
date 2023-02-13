@@ -47,6 +47,9 @@ With the ```crontab -e``` command in terminal, we run the CRON scheduler and pla
 
 # $ crontab -e
 ```
+
+Each *.sh file must be granted permissions: ```chmod +x *.sh```
+
 ---
 
 "EPIDEMIA" application version: "SARS-CoV-2_PL_V_2.0" - is a solid, designed foundation for version 3.0, which will be implemented in the near future. The "EPIDEMIA" application in version 3.0 - will be able to generate and visualize time series presented in the "SARS-CoV-2_PL_V_2.0" version for a given date entered by the user.
