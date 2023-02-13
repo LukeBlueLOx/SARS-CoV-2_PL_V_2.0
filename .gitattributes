@@ -1,0 +1,4 @@
+# Linguist overrides
+markdown.md linguist-detectable=true
+README.md linguist-detectable=true
+readme.md linguist-detectable=true
