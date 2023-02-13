@@ -1,9 +1,9 @@
 ---
 ### SARS-CoV-2_PL_V_2.0
 ---
-#### EN on GitHub: https://scv2pl.github.io/scv2pl-en
-#### EN on HEROKU: https://blox-land.herokuapp.com/scv2pl_en
-#### PL on GitHub: https://scv2pl.github.io
+#### EN version on GitHub: https://scv2pl.github.io/scv2pl-en
+#### EN version on HEROKU: https://blox-land.herokuapp.com/scv2pl_en
+#### PL version on GitHub: https://scv2pl.github.io
 ---
 #### Google Sheets For This Project:
 * [Voivodeships-V2](https://docs.google.com/spreadsheets/d/1eoLEeidp72jUeAPwfDUKHBJs9OHx7f0PO3cmj3aFBEA/edit?pli=1#gid=0)
@@ -19,7 +19,7 @@ Data sources from the API Polish Government [Open Data](https://dane.gov.pl/en) 
 * [Source1 For Voivodeships](https://api.dane.gov.pl/resources/33193,archiwalne-dane-dla-wojewodztw/file)
 * [Source2 For Districts](https://api.dane.gov.pl/resources/33194,archiwalne-dane-dla-powiatow/file)
 
-When a failure occurs - the data can be updated later in the day, or be available only in the following days for download in a zip package. The SARS-CoV-2_PL_V_2.0 version of the "EPIDEMIA" application is prepared for this and to complete the missing time series - it currently requires manually entering the required configurations and launches until the continuity of time series is obtained. In the near future, this process will be fully automated during a data source failure.
+When a failure occurs - the data can be updated later in the day, or be available only in the following days for download in a zip package. The "SARS-CoV-2_PL_V_2.0" version of the "EPIDEMIA" application is prepared for this and to complete the missing time series - it currently requires manually entering the required configurations and launches until the continuity of time series is obtained. In the near future, this process will be fully automated during a data source failure.
 
 ---
 
@@ -28,14 +28,14 @@ The application is originally designed to run automatically in the HEROKU cloud 
 Both processes require pre-setting appropriate paths in the configuration file: [config_create_sheets.yaml](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/config_create_sheets.yaml)
 
 For HEROKU:
-* MAIN: /app/,
-* CORE: /app/CORE/,
+* ```MAIN: /app/,```
+* ```CORE: /app/CORE/,```
 
 For Local Environment:
-* MAIN: /home/blox_land/SARS-CoV-2_PL_V_2.0/,
-* CORE: /home/blox_land/SARS-CoV-2_PL_V_2.0/CORE/,
+* ```MAIN: /home/blox_land/SARS-CoV-2_PL_V_2.0/,```
+* ```CORE: /home/blox_land/SARS-CoV-2_PL_V_2.0/CORE/,```
 
-The LUB folder should be placed in the main directory /home/blox_land/
+The LUB folder should be placed in the main directory ```/home/blox_land/```.
 
 With the ```crontab -e``` command in terminal, we run the CRON scheduler and place the contents of the crontab file in it:
 
