@@ -1,6 +1,0 @@
-#! /bin/bash
-
-30 11 * * 0 /home/lub/LUB/LUB.sh
-00 11 * * * /home/blox_land/PycharmProjects/SARS-CoV-2_PL_V2/local_startupscript.sh
-
-# $ crontab -e

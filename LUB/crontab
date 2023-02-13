@@ -1,0 +1,6 @@
+#! /bin/bash
+
+30 11 * * 0 /home/blox_land/LUB/LUB.sh
+00 11 * * * /home/blox_land/local_startupscript.sh
+
+# $ crontab -e
