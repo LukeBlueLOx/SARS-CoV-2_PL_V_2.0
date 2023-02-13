@@ -1,0 +1,8 @@
+#!/home/blox_land/SARS-CoV-2_PL_V_2.0/SARS-CoV-2_PL_V_2.0/bin/python3
+# -*- coding: utf-8 -*-
+import re
+import sys
+from pygments.cmdline import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
