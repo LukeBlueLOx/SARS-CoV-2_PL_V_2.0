@@ -72,7 +72,7 @@ check_date = df2.at[0, 'stan_rekordu_na']
 print('"stan_rekordu_na" from source: ' + check_date)
 print('Whether: "stan_rekordu_na" from source = "stan_rekordu_na" ???:')
 
-while check_date == str(b):
+if check_date == str(b):
     print('YES')
     df1.to_csv(save_path_extract1 + (a) + '.csv', index=False)
     df2.to_csv(save_path_extract2 + (a) + '.csv', index=False)
@@ -92,12 +92,12 @@ while check_date == str(b):
                      content)
     time.sleep(15)
 
+    import datetime
     current_day = datetime.datetime.today().weekday()
     if current_day == 6:
         result = subprocess.call(['bash', script_path1])
     else:
         result = subprocess.call(['bash', script_path2])
 
-    break
 else:
     print('NO')
