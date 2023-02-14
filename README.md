@@ -11,7 +11,7 @@
 * [Computable-V2](https://docs.google.com/spreadsheets/d/17rIcj6djv7NmIC3RV16VGVkv7tTJgUd8UGvk8ruMOmU/edit?pli=1#gid=0)
 * [Data-V2](https://docs.google.com/spreadsheets/d/12rDOluh8jReO5Ss-YqrM1eUIpZLF0zHpxyt9n84TkWU)
 ---
-The daily update of data on the SARS-CoV-2 virus in Poland usually takes place at 10:30AM GMT +0100 CEST local time.
+The daily update of data on the SARS-CoV-2 virus in Poland usually takes place at 10:30AM GMT +0100 CEST local time for Warsaw.
 
 [Government Infection Report](https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2)
 
@@ -23,7 +23,7 @@ When a failure occurs - the data can be updated later in the day, or be availabl
 
 ---
 
-The application is originally designed to run automatically in the HEROKU cloud according to the "[Heroku Scheduler](https://devcenter.heroku.com/articles/scheduler)" to execute the file: [import_daily_csv_data_from_api_od.py](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/import_daily_csv_data_from_api_od.py) at 11AM GMT +0100 CEST local time - it is also possible to perform the same process automatically locally using the CRON scheduler. 
+The application is originally designed to run automatically in the HEROKU cloud according to the "[Heroku Scheduler](https://devcenter.heroku.com/articles/scheduler)" to execute the file: [import_daily_csv_data_from_api_od.py](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/import_daily_csv_data_from_api_od.py) at 11AM GMT +0100 CEST - it is also possible to perform the same process automatically locally using the CRON scheduler. 
 
 Both processes require pre-setting appropriate paths in the configuration file: [config_create_sheets.yaml](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/config_create_sheets.yaml)
 
@@ -58,9 +58,6 @@ Python files responsible for generating Plotly - Dash charts are under construct
 
 ---
 
+The application in version [1.0 - SCV2PL](https://github.com/SCV2PL/SCV2PL.GitHub.IO) was also adapted to work in Google Cloud Platform when I had free credits to use. The Virtual Machine Computing Engine for the daily update was started and stop using the CRON "Cloud Scheduler" and the function: [GCP](https://github.com/SCV2PL/SCV2PL.GitHub.IO/tree/main/GCP).
 
-
-
-
-
-
+---
