@@ -58,6 +58,6 @@ Python files responsible for generating Plotly - Dash charts are under construct
 
 ---
 
-The application in version [1.0 - SCV2PL](https://github.com/SCV2PL/SCV2PL.GitHub.IO) was also adapted to work in Google Cloud Platform when I had free credits to use. The Virtual Machine Computing Engine for the daily update was started and stop using the CRON "Cloud Scheduler" and the function: [GCP](https://github.com/SCV2PL/SCV2PL.GitHub.IO/tree/main/GCP).
+The application in version [1.0 - SCV2PL](https://github.com/SCV2PL/SCV2PL.GitHub.IO) was also adapted to work in Google Cloud Platform when I had free credits to use. The Virtual Machine Computing Engine for the daily update was started and stop using the CRON "Cloud Scheduler" and the functions: [GCP](https://github.com/SCV2PL/SCV2PL.GitHub.IO/tree/main/GCP).
 
 ---
