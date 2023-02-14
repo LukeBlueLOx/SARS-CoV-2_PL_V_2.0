@@ -54,7 +54,11 @@ Each *.sh file must be granted permissions: ```chmod +x *.sh```
 
 "EPIDEMIA" application version: "SARS-CoV-2_PL_V_2.0" - is a solid, designed foundation for version 3.0, which will be implemented in the near future. The "EPIDEMIA" application in version 3.0 - will be able to generate and visualize time series presented in the "SARS-CoV-2_PL_V_2.0" version for a given date entered by the user.
 
+Python files responsible for generating Plotly - Dash charts are under construction and testing. They will be made available only after the application version 3.0 is completed - together with the availability of the entire application under the appropriate Open Source license. The 3.0 application will rely solely on visualizations generated with Python in Plotly-Dash. Only the Pandas library will be used to generate the datasets - Google Sheets will be the perfect schematic diagram for this task - which is a challenge for me as I am still learning all these new things. Google Sheets will remain in use all the time for applications in version 2.0 - because they are also a great tool and an integral part of the application for daily updating, learning and discovering new solutions.
+
 ---
+
+
 
 
 
