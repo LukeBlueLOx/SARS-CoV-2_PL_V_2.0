@@ -2,5 +2,6 @@
 
 30 11 * * 0 /home/blox_land/LUB/LUB.sh
 00 11 * * * /home/blox_land/LUB/local_startupscript.sh
+30 11-16 * * * /home/blox_land/PycharmProjects/SARS-CoV-2_PL_V2/csv_internal_sources_checker.py
 
 # $ crontab -e
