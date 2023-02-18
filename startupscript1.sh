@@ -18,4 +18,5 @@ python3 "$CORE/favrnd21_dash_bar_chart.py"
 python3 "$CORE/sunday_update/add_weekly_sheets_set.py"
 python3 "$CORE/sunday_update/update_avr7d_array_range_7d.py"
 python3 "$CORE/daily_cleaning.py"
-python3 "$CORE/datawrapper_api_republish_set_for_vacination_booster.py
+python3 "$CORE/datawrapper_api_republish_set_for_vacination_booster.py"
+python3 "$MAIN/import_csv_data_from_zip_file_from_api_od.py"
