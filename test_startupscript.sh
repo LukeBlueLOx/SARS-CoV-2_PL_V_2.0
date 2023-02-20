@@ -20,3 +20,8 @@ CORE=$(echo "$config" | python3 -c "import sys; import yaml; config=yaml.safe_lo
 # python3 "$CORE/daily_cleaning.py"
 # python3 "$CORE/datawrapper_api_republish_set_for_vacination_booster.py"
 # python3 "$MAIN/import_csv_data_from_zip_file_from_api_od.py"
+python3 "$CORE/7davri_14d_dates_slider_dash_choropleth_map.py"
+# python3 "$CORE/7davri_dash_choropleth_map.py"
+python3 "$CORE/bdv_dash_choropleth_map.py"
+python3 "$CORE/v_dash_choropleth_map.py"
+# python3 "$MAIN/test.py"

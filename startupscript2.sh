@@ -17,3 +17,5 @@ python3 "$CORE/7ddr_dash_table.py"
 python3 "$CORE/favrnd21_dash_bar_chart.py"
 python3 "$CORE/daily_cleaning.py"
 python3 "$MAIN/import_csv_data_from_zip_file_from_api_od.py"
+python3 "$CORE/7davri_14d_dates_slider_dash_choropleth_map.py"
+
