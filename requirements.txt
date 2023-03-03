@@ -1,6 +1,8 @@
 dash==2.8.1
 dash-core-components==2.0.0
+dash-extensions==0.0.65
 dash-html-components==2.0.0
+dash-leaflet==0.1.23
 dash-table==5.0.0
 cachetools==5.0.0
 certifi==2022.6.15
@@ -44,4 +46,3 @@ six==1.16.0
 uritemplate==4.1.1
 urllib3==1.26.11
 wrapt==1.14.1
---extra-index-url=https://packagecloud.io/github/git-lfs/pypi/simple
