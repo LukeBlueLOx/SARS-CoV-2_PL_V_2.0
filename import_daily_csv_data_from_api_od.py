@@ -92,12 +92,12 @@ if check_date == str(b):
                      content)
     time.sleep(15)
 
-    import datetime
-    current_day = datetime.datetime.today().weekday()
-    if current_day == 6:
-        result = subprocess.call(['bash', script_path1])
-    else:
-        result = subprocess.call(['bash', script_path2])
+    # import datetime
+    # current_day = datetime.datetime.today().weekday()
+    # if current_day == 6:
+    #     result = subprocess.call(['bash', script_path1])
+    # else:
+    #     result = subprocess.call(['bash', script_path2])
 
 else:
     print('NO')

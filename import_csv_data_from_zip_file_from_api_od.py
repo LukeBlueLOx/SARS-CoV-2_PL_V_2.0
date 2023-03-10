@@ -3,7 +3,10 @@ import pandas as pd
 from zipfile import ZipFile
 from urllib.request import urlopen
 from io import BytesIO
+from datetime import timedelta
 import yaml
+import time
+import subprocess
 
 with open("config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
@@ -21,9 +24,13 @@ g = Github(s)
 t = config_vals['datetime']
 a = t.strftime("%Y%m%d")
 print (a)
+b = t - timedelta(days=1)
+print (b)
 
 url1 = url_source1
 url2 = url_source2
+script_path1 = ""+str(MAIN)+"startupscript1.sh"
+script_path2 = ""+str(MAIN)+"startupscript2.sh"
 
 with urlopen(url1) as zip_url:
     with ZipFile(BytesIO(zip_url.read())) as zip_file:
@@ -51,19 +58,42 @@ with urlopen(url2) as zip_url:
             df2 = pd.read_csv(csv_file, delimiter=';', encoding="cp1250")
 print(df2.head())
 
-df1.to_csv(save_path_extract7 + (a) + '.csv', sep=',', index=False)
-df2.to_csv(save_path_extract8 + (a) + '.csv', sep=',', index=False)
+check_date = df2.at[0, 'stan_rekordu_na']
+print('"stan_rekordu_na" from source: ' + check_date)
+print('Whether: "stan_rekordu_na" from source = "stan_rekordu_na" ???:')
 
-repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
+if check_date == str(b):
+    print('YES')
+    df1.to_csv(save_path_extract7 + (a) + '.csv', sep=',', index=False)
+    df2.to_csv(save_path_extract8 + (a) + '.csv', sep=',', index=False)
 
-file_path = 'DATA/Source1_From_ZIP/' + (a) + '.csv'
-with open(file_path, 'r') as file:
-    content = file.read()
-repo.create_file(file_path, "Save: DATA/Source1_From_ZIP/" + (a) + ".csv",
-                 content)
+    repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
 
-file_path = 'DATA/Source2_From_ZIP/' + (a) + '.csv'
-with open(file_path, 'r') as file:
-    content = file.read()
-repo.create_file(file_path, "Save: DATA/Source2_From_ZIP/" + (a) + ".csv",
-                 content)
+    file_path = 'DATA/Source1_From_ZIP/' + (a) + '.csv'
+    with open(file_path, 'r') as file:
+        content = file.read()
+    repo.create_file(file_path, "Save: DATA/Source1_From_ZIP/" + (a) + ".csv",
+                     content)
+
+    file_path = 'DATA/Source2_From_ZIP/' + (a) + '.csv'
+    with open(file_path, 'r') as file:
+        content = file.read()
+    repo.create_file(file_path, "Save: DATA/Source2_From_ZIP/" + (a) + ".csv",
+                     content)
+    time.sleep(15)
+
+    current_day = t.weekday()
+    if current_day == 6:
+        result = subprocess.call(['bash', script_path1])
+    else:
+        result = subprocess.call(['bash', script_path2])
+
+    nextday1 = t + timedelta(days=1)
+
+    config_vals['datetime'] = nextday1
+    with open(MAIN + "config_create_sheets.yaml",
+              "w") as cw:
+       yaml.dump(config_vals, cw, default_flow_style=True)
+
+else:
+    print('NO')

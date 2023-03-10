@@ -29,8 +29,8 @@ sheet = service.spreadsheets()
 
 with open(""+str(MAIN)+"config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
-Source1 = config_vals['Source1']
-Source2 = config_vals['Source2']
+Source3 = config_vals['Source3']
+Source4 = config_vals['Source4']
 t = config_vals['datetime']
 spreadsheet_id1 = config_vals['ID1']
 spreadsheet_id2 = config_vals['ID2']
@@ -39,8 +39,8 @@ a = t.strftime("%Y%m%d")
 b = t
 print(a)
 print(b)
-filepaths1 = '' + str(Source1) + '' + str(a) + '.csv'
-filepaths2 = '' + str(Source2) + '' + str(a) + '.csv'
+filepaths1 = '' + str(Source3) + '' + str(a) + '.csv'
+filepaths2 = '' + str(Source4) + '' + str(a) + '.csv'
 print(filepaths1)
 print(filepaths2)
 
@@ -51,7 +51,7 @@ request = service.spreadsheets().values().update(
     valueInputOption="USER_ENTERED",
     body={"values": RUN}).execute()
 print(request)
-time.sleep(5)
+time.sleep(7)
 
 RUN = {'requests': [
     {'copyPaste': {
