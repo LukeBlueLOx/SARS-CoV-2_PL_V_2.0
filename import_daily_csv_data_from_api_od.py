@@ -90,7 +90,7 @@ if check_date == str(b):
         content = file.read()
     repo.create_file(file_path, "Save: DATA/Source2/"+(a)+".csv",
                      content)
-    time.sleep(15)
+    # time.sleep(15)
 
     # import datetime
     # current_day = datetime.datetime.today().weekday()

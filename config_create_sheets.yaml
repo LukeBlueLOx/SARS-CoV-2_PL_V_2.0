@@ -6,11 +6,11 @@
   Source2: 'https://raw.githubusercontent.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/main/DATA/Source2/',
   Source3: 'https://raw.githubusercontent.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/main/DATA/Source1_From_ZIP/',
   Source4: 'https://raw.githubusercontent.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/main/DATA/Source2_From_ZIP/',
+  Source5: 'https://raw.githubusercontent.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/main/DATA/7DAVRDLR14D/',
   T1: Voivodeships-V2, T2: Districts-V2, T3: Computable-V2, T4: DATA-V2, api_daily_data_Source1: 'https://api.dane.gov.pl/resources/33185,aktualne-dane-dla-wojewodztw/file',
   api_daily_data_Source2: 'https://api.dane.gov.pl/resources/33186,aktualne-dane-dla-powiatow/file',
   datawrapper_token: '********************',
-  datetime: 2023-03-11, formula1: '=IMPORTRANGE("https://docs.google 
-  .com/spreadsheets/d/1eoLEeidp72jUeAPwfDUKHBJs9OHx7f0PO3cmj3aFBEA"',
+  datetime: 2023-03-12, formula1: '=IMPORTRANGE("https://docs.google .com/spreadsheets/d/1eoLEeidp72jUeAPwfDUKHBJs9OHx7f0PO3cmj3aFBEA"',
   formula2: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU","COMPUTABLE!A1:I382")',
   formula3: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/17rIcj6djv7NmIC3RV16VGVkv7tTJgUd8UGvk8ruMOmU","IOTR!A1:M29")',
   formula4: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/12rDOluh8jReO5Ss-YqrM1eUIpZLF0zHpxyt9n84TkWU"',

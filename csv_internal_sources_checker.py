@@ -22,23 +22,14 @@ url2 = Source2 + a + '.csv'
 
 response1 = requests.head(url1)
 if response1.status_code == 200:
-    print('The first CSV file exists.')
+    print('The Voivodeships daily yyyymmdd.csv file from API OD exists.')
 else:
-    print('The first CSV file does not exist.')
-    exit()
+    print('The Voivodeships daily yyyymmdd.csv file from API OD does not exist.')
 
 response2 = requests.head(url2)
 if response2.status_code == 200:
-    print('The second CSV file exists.')
+    print('The Districts daily yyyymmdd.csv file from API OD exists.')
 else:
-    print('The second CSV file does not exist.')
+    print('The Districts daily yyyymmdd.csv file from API OD does not exist.')
     os.system('python3 /home/blox_land/PycharmProjects/SARS-CoV-2_PL_V2'
               '/import_daily_csv_data_from_api_od.py')
-    exit()
-
-print('Both CSV files exist. Shutting down the computer in 2 minutes...')
-"""
-time.sleep(120)
-os.system('shutdown /s /t 1')
-"""
-

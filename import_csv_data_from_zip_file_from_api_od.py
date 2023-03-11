@@ -82,18 +82,18 @@ if check_date == str(b):
                      content)
     time.sleep(15)
 
-    current_day = t.weekday()
-    if current_day == 6:
-        result = subprocess.call(['bash', script_path1])
-    else:
-        result = subprocess.call(['bash', script_path2])
-
-    nextday1 = t + timedelta(days=1)
-
-    config_vals['datetime'] = nextday1
-    with open(MAIN + "config_create_sheets.yaml",
-              "w") as cw:
-       yaml.dump(config_vals, cw, default_flow_style=True)
+    # current_day = t.weekday()
+    # if current_day == 6:
+    #     result = subprocess.call(['bash', script_path1])
+    # else:
+    #     result = subprocess.call(['bash', script_path2])
+    #
+    # nextday1 = t + timedelta(days=1)
+    #
+    # config_vals['datetime'] = nextday1
+    # with open(MAIN + "config_create_sheets.yaml",
+    #           "w") as cw:
+    #    yaml.dump(config_vals, cw, default_flow_style=True)
 
 else:
     print('NO')

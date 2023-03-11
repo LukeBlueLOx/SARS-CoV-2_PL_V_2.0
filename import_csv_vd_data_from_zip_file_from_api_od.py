@@ -38,7 +38,7 @@ with urlopen(url) as zip_url:
 print(df1.head())
 
 df1.to_csv(save_path_extract9 + (a) + '.csv', sep=',', index=False)
-repo = g.get_user().get_repo("SARS-CoV-2_PL_V_3.0")
+repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
 
 file_path = 'DATA/Vaccinations_D/' + (a) + '.csv'
 with open(file_path, 'r') as file:
