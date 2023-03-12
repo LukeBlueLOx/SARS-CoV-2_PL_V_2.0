@@ -10,6 +10,7 @@ cffi==1.15.1
 charset-normalizer==2.1.0
 datawrapper==0.4.6
 Deprecated==1.2.13
+faraday-plugins==1.10.0
 google==3.0.0
 google-api-core==2.7.1
 google-api-python-client==2.42.0
