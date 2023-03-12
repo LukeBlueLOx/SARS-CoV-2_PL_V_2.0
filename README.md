@@ -1,16 +1,18 @@
----
+<hr>
 
 <div align="center"> 
 
 ### SARS-CoV-2_PL_V_2.0
 
-</div>  
+</div> 
+
+<hr>
 
 <div align="center">  
 <img src="https://raw.githubusercontent.com/SCV2PL/SCV2PL.GitHub.IO/main/BIOHAZARD.gif" width="" height=""/>
 </div>
 
----
+<hr>
 
 #### EN version on GitHub: https://scv2pl.github.io/scv2pl-en
 #### EN version on HEROKU: https://blox-land.herokuapp.com/scv2pl_en
