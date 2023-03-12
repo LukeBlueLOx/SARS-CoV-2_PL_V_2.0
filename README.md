@@ -4,9 +4,7 @@
 
 ### SARS-CoV-2_PL_V_2.0
 
-</div>
-
----  
+</div>  
 
 <div align="center">  
 <img src="https://raw.githubusercontent.com/SCV2PL/SCV2PL.GitHub.IO/main/BIOHAZARD.gif" width="" height=""/>
