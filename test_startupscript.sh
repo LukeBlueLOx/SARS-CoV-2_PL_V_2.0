@@ -18,6 +18,7 @@ CORE=$(echo "$config" | python3 -c "import sys; import yaml; config=yaml.safe_lo
 # python3 "$CORE/7davrivsbdv10k_dash_scatterplot.py"
 # python3 "$CORE/sunday_update/add_weekly_sheets_set.py"
 # python3 "$CORE/sunday_update/update_avr7d_array_range_7d.py"
+# python3 "$CORE/sunday_update/import_csv_vd_data_from_url.py"
 # python3 "$CORE/daily_cleaning.py"
 # python3 "$CORE/datawrapper_api_republish_set_for_vacination_booster.py"
 # python3 "$MAIN/import_csv_data_from_zip_file_from_api_od.py"
