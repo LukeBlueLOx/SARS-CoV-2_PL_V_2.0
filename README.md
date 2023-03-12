@@ -1,9 +1,22 @@
 ---
+<div align="center"> 
+
 ### SARS-CoV-2_PL_V_2.0
+
+</div>
+
+---  
+
+<div align="center">  
+<img src="https://raw.githubusercontent.com/SCV2PL/SCV2PL.GitHub.IO/main/BIOHAZARD.gif" width="" height=""/>
+</div>
+
 ---
+
 #### EN version on GitHub: https://scv2pl.github.io/scv2pl-en
 #### EN version on HEROKU: https://blox-land.herokuapp.com/scv2pl_en
 #### PL version on GitHub: https://scv2pl.github.io
+
 ---
 #### Google Sheets For This Project:
 * [Voivodeships-V2](https://docs.google.com/spreadsheets/d/1eoLEeidp72jUeAPwfDUKHBJs9OHx7f0PO3cmj3aFBEA/edit?pli=1#gid=0)
