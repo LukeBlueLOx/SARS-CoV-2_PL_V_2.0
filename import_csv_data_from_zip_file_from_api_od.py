@@ -43,6 +43,22 @@ with urlopen(url1) as zip_url:
             raise ValueError("CSV file not found in zip file")
         with zip_file.open(csv_filename, "r") as csv_file:
             df1 = pd.read_csv(csv_file, delimiter=';', encoding="cp1250")
+            if 'liczba_nowych_zakazen' not in df1.columns:
+                df1.insert(1, column="liczba_nowych_zakazen", value="-")
+            if 'liczba_ponownych_zakazen' not in df1.columns:
+                df1.insert(2, column="liczba_ponownych_zakazen", value="-")
+            if 'liczba_nowych_zakazen_na_10_tys_mieszkancow' not in df1.columns:
+                df1.insert(4,
+                           column="liczba_nowych_zakazen_na_10_tys_mieszkancow",
+                           value="-")
+            if 'liczba_ponownych_zakazen_na_10_tys_mieszkancow' not in df1.columns:
+                df1.insert(5,
+                           column="liczba_ponownych_zakazen_na_10_tys_mieszkancow",
+                           value="-")
+            if 'liczba_ozdrowiencow' not in df1.columns:
+                df1.insert(11, column="liczba_ozdrowiencow", value="-")
+            if 'liczba_osob_objetych_kwarantanna' not in df1.columns:
+                df1.insert(12, column="liczba_osob_objetych_kwarantanna",value="-")
 print(df1.head())
 
 with urlopen(url2) as zip_url:
@@ -56,6 +72,23 @@ with urlopen(url2) as zip_url:
             raise ValueError("CSV file not found in zip file")
         with zip_file.open(csv_filename, "r") as csv_file:
             df2 = pd.read_csv(csv_file, delimiter=';', encoding="cp1250")
+            if 'liczba_nowych_zakazen' not in df2.columns:
+                df2.insert(2, column="liczba_nowych_zakazen", value="-")
+            if 'liczba_ponownych_zakazen' not in df2.columns:
+                df2.insert(3, column="liczba_ponownych_zakazen", value="-")
+            if 'liczba_nowych_zakazen_na_10_tys_mieszkancow' not in df2.columns:
+                df2.insert(5,
+                           column="liczba_nowych_zakazen_na_10_tys_mieszkancow",
+                           value="-")
+            if 'liczba_ponownych_zakazen_na_10_tys_mieszkancow' not in df2.columns:
+                df2.insert(6,
+                           column="liczba_ponownych_zakazen_na_10_tys_mieszkancow",
+                           value="-")
+            if 'liczba_ozdrowiencow' not in df2.columns:
+                df2.insert(12, column="liczba_ozdrowiencow", value="-")
+            if 'liczba_osob_objetych_kwarantanna' not in df2.columns:
+                df1.insert(13, column="liczba_osob_objetych_kwarantanna",
+                           value="-")
 print(df2.head())
 
 check_date = df2.at[0, 'stan_rekordu_na']

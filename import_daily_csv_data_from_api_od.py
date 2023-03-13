@@ -48,6 +48,8 @@ if 'liczba_ponownych_zakazen_na_10_tys_mieszkancow' not in df1.columns:
                value="-")
 if 'liczba_ozdrowiencow' not in df1.columns:
     df1.insert(11, column="liczba_ozdrowiencow", value="-")
+if 'liczba_osob_objetych_kwarantanna' not in df1.columns:
+    df1.insert(12, column="liczba_osob_objetych_kwarantanna", value="-")
 
 df2 = pd.read_csv(Source2, sep=sep, encoding="")
 if 'liczba_nowych_zakazen' not in df2.columns:
@@ -62,6 +64,8 @@ if 'liczba_ponownych_zakazen_na_10_tys_mieszkancow' not in df2.columns:
                value="-")
 if 'liczba_ozdrowiencow' not in df2.columns:
     df2.insert(12, column="liczba_ozdrowiencow", value="-")
+if 'liczba_osob_objetych_kwarantanna' not in df2.columns:
+    df1.insert(13, column="liczba_osob_objetych_kwarantanna", value="-")
 
 print(df1)
 print(df2)
