@@ -38,9 +38,11 @@ Data sources from the API Polish Government [Open Data](https://dane.gov.pl/en) 
 
 When a failure occurs - the data can be updated later in the day, or be available only in the following days for download in a zip package. The "SARS-CoV-2_PL_V_2.0" version of the "EPIDEMIA" application is prepared for this and to complete the missing time series - it currently requires manually entering the required configurations and launches until the continuity of time series is obtained. In the near future, this process will be fully automated during a data source failure.
 
+2023-03-13 update - the process described above has been fully automated and is being tested in order to detect possible errors and introduce corrections.
+
 ---
 
-The application is originally designed to run automatically in the HEROKU cloud according to the "[Heroku Scheduler](https://devcenter.heroku.com/articles/scheduler)" to execute the file: [import_daily_csv_data_from_api_od.py](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/import_daily_csv_data_from_api_od.py) at 11AM GMT +0100 CEST - it is also possible to perform the same process automatically locally using the CRON scheduler. 
+The application is originally designed to run automatically in the HEROKU cloud according to the "[Heroku Scheduler](https://devcenter.heroku.com/articles/scheduler)" to execute the file: [csv_internal_sources_from_zip_checker.py](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/csv_internal_sources_from_zip_checker.py) & [csv_internal_sources_checker](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/csv_internal_sources_checker.py) at every hour from 11:00AM to 6:00PM GMT +0100 CEST - it is also possible to perform the same process automatically locally using the CRON scheduler. 
 
 Both processes require pre-setting appropriate paths in the configuration file: [config_create_sheets.yaml](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/config_create_sheets.yaml)
 
@@ -54,14 +56,13 @@ For Local Environment:
 
 The LUB folder should be placed in the main directory ```/home/blox_land/```.
 
-With the ```crontab -e``` command in terminal, we run the CRON scheduler and place the contents of the crontab file in it:
+With the ```crontab -e``` command in terminal, we run the CRON scheduler to execute the file: [csv_internal_sources_from_zip_checker.py](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/csv_internal_sources_from_zip_checker.py) & [csv_internal_sources_checker](https://github.com/LukeBlueLOx/SARS-CoV-2_PL_V_2.0/blob/main/csv_internal_sources_checker.py) at every hour on the 45th minute from 10:45AM to 5:45PM GMT +0100 CEST. Please place the contents of the crontab file in it:
 
 ```
 #! /bin/bash
 
 30 11 * * 0 /home/blox_land/LUB/LUB.sh
-00 11 * * * /home/blox_land/LUB/local_startupscript.sh
-
+45 10-17 * * * /home/blox_land/LUB/local_startupscript.sh
 # $ crontab -e
 ```
 
