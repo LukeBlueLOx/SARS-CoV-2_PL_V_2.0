@@ -33,7 +33,7 @@ else:
     print('The Districts yyyymmdd.csv file from ZIP API OD does not exist.')
     os.system('python3 /home/blox_land/PycharmProjects/SARS-CoV-2_PL_V2'
               '/import_csv_data_from_zip_file_from_api_od.py')
-
+"""
 response1 = requests.head(url1)
 if response1.status_code == 200:
     print('The Districts yyyymmdd.csv file from ZIP API OD exists.')
@@ -54,7 +54,7 @@ if response1.status_code == 200:
         result = subprocess.call(['bash', script_path2])
 else:
     print('The Districts yyyymmdd.csv file from ZIP API OD does not exist.')
-    
+"""    
 response1 = requests.head(url1)
 if response1.status_code == 200:
     print('The Districts yyyymmdd.csv file from ZIP API OD exists.')
