@@ -1,0 +1,18 @@
+wojewodztwo,liczba_nowych_zakazen,liczba_ponownych_zakazen,liczba_przypadkow,liczba_nowych_zakazen_na_10_tys_mieszkancow,liczba_ponownych_zakazen_na_10_tys_mieszkancow,liczba_na_10_tys_mieszkancow,zgony,zgony_w_wyniku_covid_bez_chorob_wspolistniejacych,zgony_w_wyniku_covid_i_chorob_wspolistniejacych,liczba_zlecen_poz,liczba_ozdrowiencow,liczba_osob_objetych_kwarantanna,liczba_wykonanych_testow,liczba_testow_z_wynikiem_pozytywnym,liczba_testow_z_wynikiem_negatywnym,liczba_pozostalych_testow,teryt,stan_rekordu_na
+Cały kraj,-,-,3203,-,-,0.84,27,5,22,2849,0,0,10337,3470,6837,30,t00,2023-03-17
+dolnośląskie,-,-,144,-,-,0.5,0,0,0,99,0,0,466,156,310,0,t02,2023-03-17
+kujawsko-pomorskie,-,-,261,-,-,1.26,3,0,3,287,0,0,847,278,558,11,t04,2023-03-17
+lubelskie,-,-,220,-,-,1.05,0,0,0,170,0,0,822,236,585,1,t06,2023-03-17
+lubuskie,-,-,47,-,-,0.47,0,0,0,42,0,0,188,47,141,0,t08,2023-03-17
+łódzkie,-,-,204,-,-,0.83,6,1,5,253,0,0,616,214,399,3,t10,2023-03-17
+małopolskie,-,-,277,-,-,0.81,2,0,2,265,0,0,837,290,545,2,t12,2023-03-17
+mazowieckie,-,-,514,-,-,0.95,4,0,4,371,0,0,1571,547,1021,3,t14,2023-03-17
+opolskie,-,-,64,-,-,0.65,0,0,0,45,0,0,263,70,193,0,t16,2023-03-17
+podkarpackie,-,-,170,-,-,0.8,1,0,1,202,0,0,528,190,338,0,t18,2023-03-17
+podlaskie,-,-,142,-,-,1.21,0,0,0,133,0,0,337,147,189,1,t20,2023-03-17
+pomorskie,-,-,119,-,-,0.51,1,0,1,133,0,0,490,143,346,1,t22,2023-03-17
+śląskie,-,-,289,-,-,0.64,2,2,0,289,0,0,1199,326,868,5,t24,2023-03-17
+świętokrzyskie,-,-,115,-,-,0.93,1,0,1,84,0,0,229,121,108,0,t26,2023-03-17
+warmińsko-mazurskie,-,-,136,-,-,0.96,1,0,1,155,0,0,546,160,386,0,t28,2023-03-17
+wielkopolskie,-,-,260,-,-,0.74,5,2,3,145,0,0,575,279,294,2,t30,2023-03-17
+zachodniopomorskie,-,-,202,-,-,1.19,1,0,1,176,0,0,500,208,292,0,t32,2023-03-17
