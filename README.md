@@ -10,8 +10,9 @@
 
 <div align="center">  
 <img src="https://raw.githubusercontent.com/SCV2PL/SCV2PL.GitHub.IO/main/BIOHAZARD.gif" width="" height=""/>
-</div>
 
+### [!!! SARS-CoV-2_PL_V_3.0 - Announcement !!!](https://scv2pl.github.io/SCV2PL_V_3.0-en)
+</div>
 <hr>
 
 #### EN version on GitHub: https://scv2pl.github.io/scv2pl-en
