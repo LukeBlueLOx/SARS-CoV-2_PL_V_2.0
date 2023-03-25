@@ -113,7 +113,7 @@ if check_date == str(b):
         content = file.read()
     repo.create_file(file_path, "Save: DATA/Source2_From_ZIP/" + (a) + ".csv",
                      content)
-    time.sleep(15)
+    time.sleep(60)
 
     # current_day = t.weekday()
     # if current_day == 6:

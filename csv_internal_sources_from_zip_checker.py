@@ -29,40 +29,39 @@ script_path4 = ""+str(MAIN)+"startupscript2.sh"
 response1 = requests.head(url1)
 if response1.status_code == 200:
     print('The Districts yyyymmdd.csv file from ZIP API OD exists.')
+
 else:
     print('The Districts yyyymmdd.csv file from ZIP API OD does not exist.')
     os.system('python3 /home/blox_land/PycharmProjects/SARS-CoV-2_PL_V2'
               '/import_csv_data_from_zip_file_from_api_od.py')
    
 response1 = requests.head(url1)
+
 if response1.status_code == 200:
     print('The Districts yyyymmdd.csv file from ZIP API OD exists.')
+    
     current_day = t.weekday()
     if current_day == 6:
+
         response2 = requests.head(url2)
         if response2.status_code == 200:
             print('The yyyymmdd_7DAVRDLR14D.csv file exists.')
             result = subprocess.call(['bash', script_path3])
-            nextday1 = t + timedelta(days=1)
-            config_vals['datetime'] = nextday1
-            with open(MAIN + "config_create_sheets.yaml",
-                      "w") as cw:
-                yaml.dump(config_vals, cw, default_flow_style=True)
+        
         else:
             print('The yyyymmdd_7DAVRDLR14D.csv file does not exist.')
             result = subprocess.call(['bash', script_path1])
+    
     else:
+        
         response2 = requests.head(url2)
         if response2.status_code == 200:
             print('The yyyymmdd_7DAVRDLR14D.csv file exists.')
             result = subprocess.call(['bash', script_path4])
-            nextday1 = t + timedelta(days=1)
-            config_vals['datetime'] = nextday1
-            with open(MAIN + "config_create_sheets.yaml",
-                      "w") as cw:
-                yaml.dump(config_vals, cw, default_flow_style=True)
+
         else:
             print('The yyyymmdd_7DAVRDLR14D.csv file does not exist.')
             result = subprocess.call(['bash', script_path2])
+
 else:
     print('The Districts yyyymmdd.csv file from ZIP API OD does not exist.')
