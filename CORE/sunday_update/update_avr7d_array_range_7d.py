@@ -25,12 +25,12 @@ s = config_vals['g']
 g = Github(s)
 
 config_vals = ""
-with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py.yaml',
+with open(MAIN + 'config_create_sheets.yaml',
           "r") as cr:
    config_vals = yaml.full_load(cr)
-formula1 = config_vals['formula1']
-formula11 = config_vals['formula11']
-formula2 = config_vals['formula2']
+formula5 = config_vals['formula5']
+formula6 = config_vals['formula6']
+formula7 = config_vals['formula7']
 a = config_vals['a']
 b = config_vals['b']
 c = config_vals['c']
@@ -126,43 +126,43 @@ RUN = [
     ['=IF(G:G="","",B'+str(b)+')', '=IF(G:G="","",C'+str(b)+')',
      '=IF(G:G="","",D'+str(b)+')', '=IF(G:G="","",E'+str(b)+')',
      '=IF(G:G="","",F'+str(b)+')', '=IF(G:G="","",G'+str(b)+')',
-     ''+str(formula1)+',"'+str(a2)+'!E2")'],
+     ''+str(formula5)+',"'+str(a2)+'!E2")'],
     ['=IF(G:G="","",C'+str(b)+')', '=IF(G:G="","",D'+str(b)+')',
      '=IF(G:G="","",E'+str(b)+')', '=IF(G:G="","",F'+str(b)+')',
      '=IF(G:G="","",G'+str(b)+')',
-     ''+str(formula11)+', "'+str(a2)+'!E2"))',
-     ''+str(formula1)+', "'+str(b2)+'!E2")'],
+     ''+str(formula6)+', "'+str(a2)+'!E2"))',
+     ''+str(formula5)+', "'+str(b2)+'!E2")'],
     ['=IF(G:G="","",D'+str(b)+')', '=IF(G:G="","",E'+str(b)+')',
      '=IF(G:G="","",F'+str(b)+')', '=IF(G:G="","",G'+str(b)+')',
-     ''+str(formula11)+', "'+str(a2)+'!E2"))',
-     ''+str(formula11)+', "'+str(b2)+'!E2"))',
-     ''+str(formula1)+', "'+str(c2)+'!E2")'],
+     ''+str(formula6)+', "'+str(a2)+'!E2"))',
+     ''+str(formula6)+', "'+str(b2)+'!E2"))',
+     ''+str(formula5)+', "'+str(c2)+'!E2")'],
     ['=IF(G:G="","",E'+str(b)+')', '=IF(G:G="","",F'+str(b)+')',
      '=IF(G:G="","",G'+str(b)+')',
-     ''+str(formula11)+', "'+str(a2)+'!E2"))',
-     ''+str(formula11)+', "'+str(b2)+'!E2"))',
-     ''+str(formula11)+', "'+str(c2)+'!E2"))',
-     ''+str(formula1)+', "'+str(d2)+'!E2")'],
+     ''+str(formula6)+', "'+str(a2)+'!E2"))',
+     ''+str(formula6)+', "'+str(b2)+'!E2"))',
+     ''+str(formula6)+', "'+str(c2)+'!E2"))',
+     ''+str(formula5)+', "'+str(d2)+'!E2")'],
     ['=IF(G:G="","",F'+str(b)+')', '=IF(G:G="","",G'+str(b)+')',
-     ''+str(formula11)+', "'+str(a2)+'!E2"))',
-     ''+str(formula11)+', "'+str(b2)+'!E2"))',
-     ''+str(formula11)+', "'+str(c2)+'!E2"))',
-     ''+str(formula11)+', "'+str(d2)+'!E2"))',
-     ''+str(formula1)+', "'+str(e2)+'!E2")'],
+     ''+str(formula6)+', "'+str(a2)+'!E2"))',
+     ''+str(formula6)+', "'+str(b2)+'!E2"))',
+     ''+str(formula6)+', "'+str(c2)+'!E2"))',
+     ''+str(formula6)+', "'+str(d2)+'!E2"))',
+     ''+str(formula5)+', "'+str(e2)+'!E2")'],
     ['=IF(G:G="","",G'+str(b)+')',
-     ''+str(formula11)+', "'+str(a2)+'!E2"))',
-     ''+str(formula11)+', "'+str(b2)+'!E2"))',
-     ''+str(formula11)+', "'+str(c2)+'!E2"))',
-     ''+str(formula11)+', "'+str(d2)+'!E2"))',
-     ''+str(formula11)+', "'+str(e2)+'!E2"))',
-     ''+str(formula1)+', "'+str(f2)+'!E2")'],
-    [''+str(formula11)+', "'+str(a2)+'!E2"))',
-     ''+str(formula11)+', "'+str(b2)+'!E2"))',
-     ''+str(formula11)+', "'+str(c2)+'!E2"))',
-     ''+str(formula11)+', "'+str(d2)+'!E2"))',
-     ''+str(formula11)+', "'+str(e2)+'!E2"))',
-     ''+str(formula11)+', "'+str(f2)+'!E2"))',
-     ''+str(formula1)+', "'+str(g2)+'!E2")']
+     ''+str(formula6)+', "'+str(a2)+'!E2"))',
+     ''+str(formula6)+', "'+str(b2)+'!E2"))',
+     ''+str(formula6)+', "'+str(c2)+'!E2"))',
+     ''+str(formula6)+', "'+str(d2)+'!E2"))',
+     ''+str(formula6)+', "'+str(e2)+'!E2"))',
+     ''+str(formula5)+', "'+str(f2)+'!E2")'],
+    [''+str(formula6)+', "'+str(a2)+'!E2"))',
+     ''+str(formula6)+', "'+str(b2)+'!E2"))',
+     ''+str(formula6)+', "'+str(c2)+'!E2"))',
+     ''+str(formula6)+', "'+str(d2)+'!E2"))',
+     ''+str(formula6)+', "'+str(e2)+'!E2"))',
+     ''+str(formula6)+', "'+str(f2)+'!E2"))',
+     ''+str(formula5)+', "'+str(g2)+'!E2")']
 ]
 request = service.spreadsheets().values().update(
     spreadsheetId=spreadsheet_id,
@@ -172,20 +172,20 @@ request = service.spreadsheets().values().update(
 print(request)
 
 RUN = [
-    ['=IF(H:H="","",'+str(formula2)+', "'+str(a2)+'!M2"))',
-     '=IF(H:H="","",'+str(formula2)+', "'+str(a2)+'!I2"))'],
-    ['=IF(H:H="","",'+str(formula2)+', "'+str(b2)+'!M2"))',
-     '=IF(H:H="","",'+str(formula2)+', "'+str(b2)+'!I2"))'],
-    ['=IF(H:H="","",'+str(formula2)+', "'+str(c2)+'!M2"))',
-     '=IF(H:H="","",'+str(formula2)+', "'+str(c2)+'!I2"))'],
-    ['=IF(H:H="","",'+str(formula2)+', "'+str(d2)+'!M2"))',
-     '=IF(H:H="","",'+str(formula2)+', "'+str(d2)+'!I2"))'],
-    ['=IF(H:H="","",'+str(formula2)+', "'+str(e2)+'!M2"))',
-     '=IF(H:H="","",'+str(formula2)+', "'+str(e2)+'!I2"))'],
-    ['=IF(H:H="","",'+str(formula2)+', "'+str(f2)+'!M2"))',
-     '=IF(H:H="","",'+str(formula2)+', "'+str(f2)+'!I2"))'],
-    ['=IF(H:H="","",'+str(formula2)+', "'+str(g2)+'!M2"))',
-     '=IF(H:H="","",'+str(formula2)+', "'+str(g2)+'!I2"))']
+    ['=IF(H:H="","",'+str(formula7)+', "'+str(a2)+'!M2"))',
+     '=IF(H:H="","",'+str(formula7)+', "'+str(a2)+'!I2"))'],
+    ['=IF(H:H="","",'+str(formula7)+', "'+str(b2)+'!M2"))',
+     '=IF(H:H="","",'+str(formula7)+', "'+str(b2)+'!I2"))'],
+    ['=IF(H:H="","",'+str(formula7)+', "'+str(c2)+'!M2"))',
+     '=IF(H:H="","",'+str(formula7)+', "'+str(c2)+'!I2"))'],
+    ['=IF(H:H="","",'+str(formula7)+', "'+str(d2)+'!M2"))',
+     '=IF(H:H="","",'+str(formula7)+', "'+str(d2)+'!I2"))'],
+    ['=IF(H:H="","",'+str(formula7)+', "'+str(e2)+'!M2"))',
+     '=IF(H:H="","",'+str(formula7)+', "'+str(e2)+'!I2"))'],
+    ['=IF(H:H="","",'+str(formula7)+', "'+str(f2)+'!M2"))',
+     '=IF(H:H="","",'+str(formula7)+', "'+str(f2)+'!I2"))'],
+    ['=IF(H:H="","",'+str(formula7)+', "'+str(g2)+'!M2"))',
+     '=IF(H:H="","",'+str(formula7)+', "'+str(g2)+'!I2"))']
 ]
 request = service.spreadsheets().values().update(
     spreadsheetId=spreadsheet_id,
@@ -235,22 +235,6 @@ request = service.spreadsheets().values().update(
     valueInputOption="USER_ENTERED", body={"values": RUN}).execute()
 print(request)
 
-"""e = b - 1
-RUN = {'requests': [
-    {'autoFill': {
-        'range': {
-            'sheetId': sheet_id,
-            'startRowIndex': e,
-            'endRowIndex': c,
-            'startColumnIndex': 16,
-            'endColumnIndex': 20,
-        },
-    }},
-]}
-request = service.spreadsheets().batchUpdate(
-    spreadsheetId=spreadsheet_id, body=RUN).execute()
-print(request)"""
-
 RUN = {'requests': [
     {'copyPaste': {
         'source': {
@@ -275,53 +259,50 @@ request = service.spreadsheets().batchUpdate(
 print(request)
 
 config_vals['a'] = a + 7
-with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
-                 '.yaml',
+with open(MAIN + 'config_create_sheets.yaml.yaml',
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
-   
+
 config_vals['b'] = b + 7
-with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
-                 '.yaml',
+with open(MAIN + 'config_create_sheets.yaml.yaml',
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
-   
+
 config_vals['c'] = c + 7
-with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
-                 '.yaml',
+with open(MAIN + 'config_create_sheets.yaml.yaml',
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 config_vals['d'] = d + 7
-with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
-                 '.yaml',
+with open(MAIN + 'config_create_sheets.yaml.yaml',
+          "w") as cw:
+   yaml.dump(config_vals, cw, default_flow_style=True)
+
+config_vals['n'] = 1
+with open(MAIN + "config_create_sheets.yaml",
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 repo = g.get_user().get_repo("scv2pl")
-contents = repo.get_contents('/CORE/sunday_update/config_for_update_avr7d_arr'
-                              'ay_range_7d_py.yaml')
-with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
-                 '.yaml',
+contents = repo.get_contents('config_create_sheets.yaml')
+with open(MAIN + 'config_create_sheets.yaml',
           'r') as file:
     content = file.read()
 # update
 repo.update_file(contents.path,
-                 "Save: config_for_update_avr7d_array_range_7d_py.yaml",
+                 "Save: config_create_sheets.yaml",
                  content,
                  contents.sha)
 print(content)
 
 repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
-contents = repo.get_contents('/CORE/sunday_update/config_for_update_avr7d_arr'
-                              'ay_range_7d_py.yaml')
-with open(CORE + 'sunday_update/config_for_update_avr7d_array_range_7d_py'
-                 '.yaml',
+contents = repo.get_contents('config_create_sheets.yaml')
+with open(MAIN + 'config_create_sheets.yaml',
           'r') as file:
     content = file.read()
 # update
 repo.update_file(contents.path,
-                 "Save: config_for_update_avr7d_array_range_7d_py.yaml",
+                 "Save: config_create_sheets.yaml",
                  content,
                  contents.sha)
 print(content)

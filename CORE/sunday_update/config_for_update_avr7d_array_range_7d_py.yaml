@@ -1,3 +1,0 @@
-{a: 742, b: 749, c: 756, d: 750, formula1: '=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU"',
-  formula11: '=IF(G:G="","",IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU"',
-  formula2: 'IMPORTRANGE("https://docs.google.com/spreadsheets/d/1R9gfgth7XGm1Z5A2IStYVoxpNej1balmDsODyU5-ljU"'}
