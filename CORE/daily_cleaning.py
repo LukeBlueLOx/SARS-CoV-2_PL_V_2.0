@@ -55,7 +55,6 @@ request = service.spreadsheets().batchUpdate(
     body=RUN).execute()
 print(request)
 
-
 request = sheet.values().clear(
     spreadsheetId=spreadsheet_id2,
     range="COMPUTABLE!A2").execute()
@@ -77,7 +76,6 @@ request = service.spreadsheets().batchUpdate(
     spreadsheetId=spreadsheet_id2,
     body=RUN).execute()
 print(request)
-
 
 request = sheet.values().clear(
     spreadsheetId=spreadsheet_id3,

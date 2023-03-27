@@ -30,4 +30,5 @@ CORE=$(echo "$config" | python3 -c "import sys; import yaml; config=yaml.safe_lo
 # python3 "$CORE/vm_dash_choropleth_map.py"
 # python3 "$MAIN/ts_import_csv_data_from_zip_file_from_api_od.py"
 # python3 "$MAIN/prepare_vd_data_sources.py"
+# python3 "$MAIN/date+1day.py"
 # python3 "$MAIN/test.py"
