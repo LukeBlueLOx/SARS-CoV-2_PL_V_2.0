@@ -53,6 +53,12 @@ tt = t.strftime('%Y%m%d')
 
 dw = Datawrapper(access_token = datawrapper_token)
 
+dw_id = 'NRnYP'
+dw.publish_chart(dw_id)
+
+dw_id = 'ql6mK'
+dw.publish_chart(dw_id)
+
 dw_id = 'yUSUL'
 external_data = url_source4 + save_path_extract4 + tt + '_IOTR.csv'
 print(external_data)
@@ -62,7 +68,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = '6HKut'
@@ -74,7 +79,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = 'JW5zN'
@@ -86,7 +90,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = 'p1M7c'
@@ -98,7 +101,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = 'wt85J'
@@ -110,7 +112,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = 'WVcSA'
@@ -122,7 +123,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = 'uO9JC'
@@ -134,7 +134,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = 'C3dh5'
@@ -146,7 +145,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 # dw_id = 'No277'
@@ -158,7 +156,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'FJtlg'
@@ -170,7 +167,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'qGF2F'
@@ -182,7 +178,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = 'gRs82'
@@ -194,7 +189,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'qGF2F'
@@ -234,7 +228,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 dw_id = 'j0TYA'
@@ -246,7 +239,6 @@ metadata = {
     }
 }
 dw.update_metadata(dw_id, metadata)
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 # dw_id = 'nK681'
@@ -257,7 +249,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'ZJF26'
@@ -268,7 +259,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'FwfK3'
@@ -279,7 +269,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = 'omUrz'
@@ -290,7 +279,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = '1cfR3'
@@ -301,7 +289,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = 'galdz'
@@ -312,7 +299,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = '23zkY'
@@ -323,7 +309,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = '3btH7'
@@ -334,7 +319,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'zRe7S'
@@ -346,7 +330,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = 'YTJUM'
@@ -357,7 +340,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'EnedJ'
@@ -368,7 +350,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = '2rIZu'
@@ -379,7 +360,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 # dw_id = 'msk23'
@@ -390,7 +370,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = 'KNHOM'
@@ -401,7 +380,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = 'K8Lky'
@@ -412,7 +390,6 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 #
 # dw_id = 'Il57Q'
@@ -423,5 +400,4 @@ dw.publish_chart(dw_id)
 #     }
 # }
 # dw.update_metadata(dw_id, metadata)
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
