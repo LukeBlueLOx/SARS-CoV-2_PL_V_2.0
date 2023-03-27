@@ -13,17 +13,13 @@ datawrapper_token = config_vals['datawrapper_token']
 dw = Datawrapper(access_token = datawrapper_token)
 
 dw_id = 'EBztU'
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 # dw_id = 'VFe7U'
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
 
 dw_id = 'ogppd'
-properties = dw.chart_properties(dw_id)
 dw.publish_chart(dw_id)
 
 # dw_id = 'uXBbj'
-# properties = dw.chart_properties(dw_id)
 # dw.publish_chart(dw_id)
