@@ -36,7 +36,6 @@ else:
               '/import_csv_data_from_zip_file_from_api_od.py')
    
 response1 = requests.head(url1)
-
 if response1.status_code == 200:
     print('The Districts yyyymmdd.csv file from ZIP API OD exists.')
     
