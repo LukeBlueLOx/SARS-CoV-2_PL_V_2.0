@@ -8,7 +8,7 @@ with open("config_create_sheets.yaml", "r") as cr:
     config_vals = yaml.full_load(cr)
 MAIN = config_vals['MAIN']
 CORE = config_vals['CORE']
-Source6 = config_vals['Source6']
+Source5 = config_vals['Source5']
 t = config_vals['datetime']
 a = t.strftime("%Y%m%d")
 print (a)
