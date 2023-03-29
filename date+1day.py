@@ -12,7 +12,7 @@ Source6 = config_vals['Source6']
 t = config_vals['datetime']
 a = t.strftime("%Y%m%d")
 print (a)
-url1 = Source6 + a + '.csv'
+url1 = Source5 + a + '_7DAVRDLR14D.csv'
 
 response1 = requests.head(url1)
 if response1.status_code == 200:
