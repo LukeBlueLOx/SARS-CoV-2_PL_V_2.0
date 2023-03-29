@@ -16,7 +16,7 @@ url1 = Source5 + a + '_7DAVRDLR14D.csv'
 
 response1 = requests.head(url1)
 if response1.status_code == 200:
-    print('The Vaccinations_D yyyymmdd.csv file from ZIP API OD exists.')
+    print('The YYYYMMDD_7DAVRDLR14D.csv file from ZIP API OD exists.')
 
     with open(""+str(MAIN)+"config_create_sheets.yaml", "r") as cr:
         config_vals = yaml.full_load(cr)
@@ -30,5 +30,5 @@ if response1.status_code == 200:
         yaml.dump(config_vals, cw, default_flow_style=True)
 
 else:
-    print('The Vaccinations_D yyyymmdd.csv file from ZIP API OD does not exist'
+    print('The YYYYMMDD_7DAVRDLR14D.csv file from ZIP API OD does not exist'
           '.')
