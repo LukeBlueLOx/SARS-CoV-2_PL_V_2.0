@@ -5,3 +5,4 @@ source SARS-CoV-2_PL_V2/bin/activate
 python3 csv_internal_sources_from_zip_checker.py
 python3 csv_internal_sources_from_zip_checker.py
 python3 csv_internal_sources_checker.py
+python3 date+1day.py
