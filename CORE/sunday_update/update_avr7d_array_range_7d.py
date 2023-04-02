@@ -259,22 +259,22 @@ request = service.spreadsheets().batchUpdate(
 print(request)
 
 config_vals['a'] = a + 7
-with open(MAIN + 'config_create_sheets.yaml.yaml',
+with open(MAIN + 'config_create_sheets.yaml',
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 config_vals['b'] = b + 7
-with open(MAIN + 'config_create_sheets.yaml.yaml',
+with open(MAIN + 'config_create_sheets.yaml',
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 config_vals['c'] = c + 7
-with open(MAIN + 'config_create_sheets.yaml.yaml',
+with open(MAIN + 'config_create_sheets.yaml',
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 config_vals['d'] = d + 7
-with open(MAIN + 'config_create_sheets.yaml.yaml',
+with open(MAIN + 'config_create_sheets.yaml',
           "w") as cw:
    yaml.dump(config_vals, cw, default_flow_style=True)
 
@@ -284,18 +284,6 @@ with open(MAIN + "config_create_sheets.yaml",
    yaml.dump(config_vals, cw, default_flow_style=True)
 
 repo = g.get_user().get_repo("scv2pl")
-contents = repo.get_contents('config_create_sheets.yaml')
-with open(MAIN + 'config_create_sheets.yaml',
-          'r') as file:
-    content = file.read()
-# update
-repo.update_file(contents.path,
-                 "Save: config_create_sheets.yaml",
-                 content,
-                 contents.sha)
-print(content)
-
-repo = g.get_user().get_repo("SARS-CoV-2_PL_V_2.0")
 contents = repo.get_contents('config_create_sheets.yaml')
 with open(MAIN + 'config_create_sheets.yaml',
           'r') as file:
