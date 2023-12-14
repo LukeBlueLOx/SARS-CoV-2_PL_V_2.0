@@ -1,0 +1,18 @@
+wojewodztwo,liczba_nowych_zakazen,liczba_ponownych_zakazen,liczba_przypadkow,liczba_nowych_zakazen_na_10_tys_mieszkancow,liczba_ponownych_zakazen_na_10_tys_mieszkancow,liczba_na_10_tys_mieszkancow,zgony,zgony_w_wyniku_covid_bez_chorob_wspolistniejacych,zgony_w_wyniku_covid_i_chorob_wspolistniejacych,liczba_zlecen_poz,liczba_ozdrowiencow,liczba_osob_objetych_kwarantanna,liczba_wykonanych_testow,liczba_testow_z_wynikiem_pozytywnym,liczba_testow_z_wynikiem_negatywnym,liczba_pozostalych_testow,teryt,stan_rekordu_na
+Cały kraj,-,-,3490,-,-,0.91,25,11,14,3030,0,0,7077,3610,3465,2,t00,2023-12-13
+dolnośląskie,-,-,193,-,-,0.67,2,1,1,124,0,0,326,197,129,0,t02,2023-12-13
+kujawsko-pomorskie,-,-,295,-,-,1.43,2,0,2,294,0,0,630,309,321,0,t04,2023-12-13
+lubelskie,-,-,284,-,-,1.35,0,0,0,254,0,0,659,304,355,0,t06,2023-12-13
+lubuskie,-,-,113,-,-,1.12,1,1,0,68,0,0,264,114,150,0,t08,2023-12-13
+łódzkie,-,-,189,-,-,0.77,4,4,0,188,0,0,354,192,162,0,t10,2023-12-13
+małopolskie,-,-,245,-,-,0.72,5,2,3,286,0,0,516,248,267,1,t12,2023-12-13
+mazowieckie,-,-,546,-,-,1.01,4,0,4,401,0,0,1207,562,645,0,t14,2023-12-13
+opolskie,-,-,72,-,-,0.73,0,0,0,45,0,0,138,72,66,0,t16,2023-12-13
+podkarpackie,-,-,171,-,-,0.8,1,0,1,148,0,0,300,187,113,0,t18,2023-12-13
+podlaskie,-,-,84,-,-,0.71,1,0,1,89,0,0,198,84,114,0,t20,2023-12-13
+pomorskie,-,-,141,-,-,0.6,0,0,0,130,0,0,314,143,171,0,t22,2023-12-13
+śląskie,-,-,430,-,-,0.95,1,1,0,356,0,0,750,443,307,0,t24,2023-12-13
+świętokrzyskie,-,-,85,-,-,0.69,0,0,0,83,0,0,128,86,42,0,t26,2023-12-13
+warmińsko-mazurskie,-,-,97,-,-,0.68,1,1,0,93,0,0,209,101,108,0,t28,2023-12-13
+wielkopolskie,-,-,332,-,-,0.95,2,1,1,237,0,0,495,340,155,0,t30,2023-12-13
+zachodniopomorskie,-,-,182,-,-,1.07,1,0,1,230,0,0,437,187,249,1,t32,2023-12-13
