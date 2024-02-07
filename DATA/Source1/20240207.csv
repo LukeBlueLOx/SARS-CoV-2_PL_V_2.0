@@ -1,0 +1,18 @@
+wojewodztwo,liczba_nowych_zakazen,liczba_ponownych_zakazen,liczba_przypadkow,liczba_nowych_zakazen_na_10_tys_mieszkancow,liczba_ponownych_zakazen_na_10_tys_mieszkancow,liczba_na_10_tys_mieszkancow,zgony,zgony_w_wyniku_covid_bez_chorob_wspolistniejacych,zgony_w_wyniku_covid_i_chorob_wspolistniejacych,liczba_zlecen_poz,liczba_ozdrowiencow,liczba_osob_objetych_kwarantanna,liczba_wykonanych_testow,liczba_testow_z_wynikiem_pozytywnym,liczba_testow_z_wynikiem_negatywnym,liczba_pozostalych_testow,teryt,stan_rekordu_na
+Cały kraj,-,-,415,-,-,0.11,3,1,2,1496,0,0,4381,440,3937,4,t00,2024-02-06
+dolnośląskie,-,-,19,-,-,0.07,1,1,0,64,0,0,279,19,260,0,t02,2024-02-06
+kujawsko-pomorskie,-,-,19,-,-,0.09,0,0,0,98,0,0,344,19,324,1,t04,2024-02-06
+lubelskie,-,-,35,-,-,0.17,0,0,0,109,0,0,224,39,185,0,t06,2024-02-06
+lubuskie,-,-,11,-,-,0.11,0,0,0,23,0,0,107,12,95,0,t08,2024-02-06
+łódzkie,-,-,21,-,-,0.09,1,0,1,95,0,0,245,22,222,1,t10,2024-02-06
+małopolskie,-,-,23,-,-,0.07,0,0,0,154,0,0,317,23,294,0,t12,2024-02-06
+mazowieckie,-,-,88,-,-,0.16,0,0,0,191,0,0,778,95,683,0,t14,2024-02-06
+opolskie,-,-,8,-,-,0.08,0,0,0,7,0,0,104,9,95,0,t16,2024-02-06
+podkarpackie,-,-,29,-,-,0.14,1,0,1,134,0,0,273,29,244,0,t18,2024-02-06
+podlaskie,-,-,22,-,-,0.19,0,0,0,86,0,0,163,25,138,0,t20,2024-02-06
+pomorskie,-,-,15,-,-,0.06,0,0,0,72,0,0,162,15,147,0,t22,2024-02-06
+śląskie,-,-,33,-,-,0.07,0,0,0,189,0,0,535,33,502,0,t24,2024-02-06
+świętokrzyskie,-,-,16,-,-,0.13,0,0,0,46,0,0,109,17,92,0,t26,2024-02-06
+warmińsko-mazurskie,-,-,14,-,-,0.1,0,0,0,68,0,0,157,14,143,0,t28,2024-02-06
+wielkopolskie,-,-,25,-,-,0.07,0,0,0,57,0,0,187,28,158,1,t30,2024-02-06
+zachodniopomorskie,-,-,26,-,-,0.15,0,0,0,102,0,0,231,27,204,0,t32,2024-02-06
