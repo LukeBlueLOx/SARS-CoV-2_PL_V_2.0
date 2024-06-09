@@ -3,3 +3,4 @@
 30 11 * * 0 /home/blox_land/LUB/LUB.sh
 45 10-17 * * * /home/blox_land/LUB/local_startupscript.sh
 # $ crontab -e
+# */30 * * * * /home/blox_land/LUB/local_startupscript.sh
