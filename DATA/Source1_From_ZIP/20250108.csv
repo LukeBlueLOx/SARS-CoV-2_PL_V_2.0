@@ -1,0 +1,18 @@
+wojewodztwo,liczba_nowych_zakazen,liczba_ponownych_zakazen,liczba_wszystkich_zakazen,liczba_nowych_zakazen_na_10_tys_mieszkancow,liczba_ponownych_zakazen_na_10_tys_mieszkancow,liczba_wszystkich_zakazen_na_10_tys_mieszkancow,zgony,zgony_w_wyniku_covid_bez_chorob_wspolistniejacych,zgony_w_wyniku_covid_i_chorob_wspolistniejacych,liczba_zlecen_poz,liczba_ozdrowiencow,liczba_osob_objetych_kwarantanna,liczba_wykonanych_testow,liczba_testow_z_wynikiem_pozytywnym,liczba_testow_z_wynikiem_negatywnym,liczba_pozostalych_testow,teryt,stan_rekordu_na
+Cały kraj,114,53,167,0.03,0.01,0.04,1,0,1,1083,0,0,2995,174,2817,4,t00,2025-01-07
+dolnośląskie,8,4,12,0.03,0.01,0.04,0,0,0,36,0,0,144,13,131,0,t02,2025-01-07
+kujawsko-pomorskie,10,4,14,0.05,0.02,0.07,0,0,0,60,0,0,275,16,257,2,t04,2025-01-07
+lubelskie,17,7,24,0.08,0.03,0.11,0,0,0,110,0,0,241,25,215,1,t06,2025-01-07
+lubuskie,1,1,2,0.01,0.01,0.02,0,0,0,5,0,0,24,2,22,0,t08,2025-01-07
+łódzkie,6,3,9,0.02,0.01,0.04,0,0,0,46,0,0,102,9,93,0,t10,2025-01-07
+małopolskie,3,2,5,0.01,0.01,0.01,0,0,0,100,0,0,232,5,227,0,t12,2025-01-07
+mazowieckie,10,6,16,0.02,0.01,0.03,0,0,0,123,0,0,643,16,627,0,t14,2025-01-07
+opolskie,1,1,2,0.01,0.01,0.02,0,0,0,25,0,0,73,2,71,0,t16,2025-01-07
+podkarpackie,10,0,10,0.05,0.0,0.05,0,0,0,109,0,0,170,10,160,0,t18,2025-01-07
+podlaskie,15,6,21,0.13,0.05,0.18,0,0,0,84,0,0,133,22,111,0,t20,2025-01-07
+pomorskie,3,2,5,0.01,0.01,0.02,0,0,0,54,0,0,164,5,159,0,t22,2025-01-07
+śląskie,12,7,19,0.03,0.02,0.04,1,0,1,174,0,0,321,19,302,0,t24,2025-01-07
+świętokrzyskie,7,2,9,0.06,0.02,0.07,0,0,0,20,0,0,41,9,31,1,t26,2025-01-07
+warmińsko-mazurskie,3,0,3,0.02,0.0,0.02,0,0,0,39,0,0,104,3,101,0,t28,2025-01-07
+wielkopolskie,4,1,5,0.01,0.0,0.01,0,0,0,38,0,0,149,5,144,0,t30,2025-01-07
+zachodniopomorskie,1,6,7,0.01,0.04,0.04,0,0,0,58,0,0,104,7,97,0,t32,2025-01-07
